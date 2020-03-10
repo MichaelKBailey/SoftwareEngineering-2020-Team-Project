@@ -1,0 +1,170 @@
+package PanelAttackPackage;
+
+import javax.swing.JButton;
+
+
+
+public class BlockButtons extends JButton 
+{
+	JButton Something = new JButton();
+	private final int blockWidth;
+	private final int blockHeight;
+	private int initialY = -30;
+	private int currentY;
+	private int initialX;
+	private int currentX;
+	private String blockColor;
+	private String currentState = "At Rest";
+	private String colorMatch = "No";
+	
+
+	public BlockButtons()
+	{
+	
+	blockWidth = 30;
+	blockHeight = 30;
+	
+	
+	}
+	public BlockButtons(int x, int y, int width, int height)
+	{
+	
+	this.blockWidth = width; 
+	this.blockHeight = height;
+	this.currentX = x;
+	this.currentY = y;	
+	
+	}
+
+
+	/**
+	 * @return the blockWidth
+	 */
+	public int getBlockWidth() {
+		return blockWidth;
+	}
+
+
+	/**
+	 * @return the blockHeight
+	 */
+	public int getBlockHeight() {
+		return blockHeight;
+	}
+
+
+	/**
+	 * @return the initialY
+	 */
+	public int getInitialY() {
+		return initialY;
+	}
+
+
+	/**
+	 * @param initialY the initialY to set
+	 */
+	public void setInitialY(int initialY) {
+		this.initialY = initialY;
+	}
+
+
+	/**
+	 * @return the currentY
+	 */
+	public int getCurrentY() {
+		return currentY;
+	}
+
+
+	/**
+	 * @param currentY the currentY to set
+	 */
+	public void setCurrentY(int currentY) {
+		this.currentY = currentY;
+	}
+
+
+	/**
+	 * @return the initialX
+	 */
+	public int getInitialX() {
+		return initialX;
+	}
+
+
+	/**
+	 * @param initialX the initialX to set
+	 */
+	public void setInitialX(int initialX) {
+		this.initialX = initialX;
+	}
+
+
+	/**
+	 * @return the currentX
+	 */
+	public int getCurrentX() {
+		return currentX;
+	}
+
+
+	/**
+	 * @param currentX the currentX to set
+	 */
+	public void setCurrentX(int currentX) {
+		this.currentX = currentX;
+	}
+
+
+	/**
+	 * @return the blockColor
+	 */
+	public String getBlockColor() {
+		return blockColor;
+	}
+
+
+	/**
+	 * @param blockColor the blockColor to set
+	 */
+	public void setBlockColor(String blockColor) {
+		this.blockColor = blockColor;
+	}
+
+
+	/**
+	 * @return the currentState
+	 */
+	public String getCurrentState() {
+		return currentState;
+	}
+
+
+	/**
+	 * @param currentState the currentState to set
+	 */
+	public void setCurrentState(String currentState) {
+		this.currentState = currentState;
+	}
+
+
+	/**
+	 * @return the colorMatch
+	 */
+	public String getColorMatch() {
+		return colorMatch;
+	}
+
+
+	/**
+	 * @param colorMatch the colorMatch to set
+	 */
+	public void setColorMatch(String colorMatch) {
+		this.colorMatch = colorMatch;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_T7azgFKgEeqj66su646BZA" name="model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_UFptkFKgEeqj66su646BZA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oHNXYFKgEeqj66su646BZA" name="Client Stuff"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oHNXYVKgEeqj66su646BZA" name="Server Stuff"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oHN-cFKgEeqj66su646BZA" name="PanelAttack">
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-cVKgEeqj66su646BZA" name="LogonSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-clKgEeqj66su646BZA" name="MenuSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-c1KgEeqj66su646BZA" name="GraphicsSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-dFKgEeqj66su646BZA" name="AnimationSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-dVKgEeqj66su646BZA" name="Connection/Association Manager"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oHN-dlKgEeqj66su646BZA" name="Physics and Timers"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa9asFKgEeqj66su646BZA" name="GraphicsSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa-o0FKgEeqj66su646BZA" name="LogonSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa-BwlKgEeqj66su646BZA" name="Animation/GameControler"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa-o0VKgEeqj66su646BZA" name="Connection/Association Manager"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa-BwVKgEeqj66su646BZA" name="MenuSystem"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xa-BwFKgEeqj66su646BZA" name="Physics and Timers"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Jul9sFKhEeqj66su646BZA" name="LogonConstructor"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KE1TcFKhEeqj66su646BZA" name="MenuConstructor"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Kd4FkFKhEeqj66su646BZA" name="GraphicsConstructor">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_DUMQoFKiEeqj66su646BZA" name="GamePlayArea"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KyJscFKhEeqj66su646BZA" name="AnimationConstructor"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LJVdYFKhEeqj66su646BZA" name="PhysicsConstructor"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_eQ8ncFKhEeqj66su646BZA" name="ConManConstructor"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oHOlgFKgEeqj66su646BZA" name="Database Stuff"/>
+</uml:Model>

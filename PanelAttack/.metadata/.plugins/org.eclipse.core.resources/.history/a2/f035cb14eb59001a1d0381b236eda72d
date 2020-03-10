@@ -1,0 +1,26 @@
+package PanelAttackPackage;
+
+import java.util.ArrayList;
+
+public class GameData 
+{
+	private ButtonBlocks buttonBlock;
+	GameData()
+	{
+		
+		ArrayList <ButtonBlocks> SomeName = new ArrayList<ButtonBlocks> ();
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

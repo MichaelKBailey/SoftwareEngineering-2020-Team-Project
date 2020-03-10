@@ -1,0 +1,137 @@
+package PanelAttackPackage;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class GameData 
+{
+	GameData()
+	{
+		
+		ArrayList <ButtonBlocks> someName = new ArrayList<ButtonBlocks> ();
+
+		ButtonBlocks REDButtonBlock = new ButtonBlocks();
+		REDButtonBlock.setBounds(REDButtonBlock.getInitialX(),REDButtonBlock.getInitialY(), REDButtonBlock.getBlockWidth(), REDButtonBlock.getBlockHeight());
+		REDButtonBlock.setEnabled(false);
+		REDButtonBlock.setVisible(true);
+		REDButtonBlock.setText(" ");
+		REDButtonBlock.setBackground(Color.RED);
+		someName.add(REDButtonBlock);
+		
+		
+		ButtonBlocks BLACKButtonBlock = new ButtonBlocks();
+		BLACKButtonBlock.setBounds(BLACKButtonBlock.getInitialX(),BLACKButtonBlock.getInitialY(), BLACKButtonBlock.getBlockWidth(), BLACKButtonBlock.getBlockHeight());
+		BLACKButtonBlock.setEnabled(false);
+		BLACKButtonBlock.setVisible(true);
+		BLACKButtonBlock.setText(" ");
+		BLACKButtonBlock.setBackground(Color.RED);
+		someName.add(BLACKButtonBlock);
+		
+		
+		ButtonBlocks BLUEButtonBlock = new ButtonBlocks();
+		BLUEButtonBlock.setBounds(BLUEButtonBlock.getInitialX(),BLUEButtonBlock.getInitialY(), BLUEButtonBlock.getBlockWidth(), BLUEButtonBlock.getBlockHeight());
+		BLUEButtonBlock.setEnabled(false);
+		BLUEButtonBlock.setVisible(true);
+		BLUEButtonBlock.setText(" ");
+		BLUEButtonBlock.setBackground(Color.RED);
+		someName.add(BLUEButtonBlock);
+		
+		
+		ButtonBlocks CYANButtonBlock = new ButtonBlocks();
+		CYANButtonBlock.setBounds(CYANButtonBlock.getInitialX(),CYANButtonBlock.getInitialY(), CYANButtonBlock.getBlockWidth(), CYANButtonBlock.getBlockHeight());
+		CYANButtonBlock.setEnabled(false);
+		CYANButtonBlock.setVisible(true);
+		CYANButtonBlock.setText(" ");
+		CYANButtonBlock.setBackground(Color.RED);
+		someName.add(CYANButtonBlock);
+		
+		
+		ButtonBlocks GREENButtonBlock = new ButtonBlocks();
+		GREENButtonBlock.setBounds(GREENButtonBlock.getInitialX(),GREENButtonBlock.getInitialY(), GREENButtonBlock.getBlockWidth(), GREENButtonBlock.getBlockHeight());
+		GREENButtonBlock.setEnabled(false);
+		GREENButtonBlock.setVisible(true);
+		GREENButtonBlock.setText(" ");
+		GREENButtonBlock.setBackground(Color.RED);
+		someName.add(GREENButtonBlock);
+		
+		
+		ButtonBlocks ORANGEButtonBlock = new ButtonBlocks();
+		ORANGEButtonBlock.setBounds(ORANGEButtonBlock.getInitialX(),ORANGEButtonBlock.getInitialY(), ORANGEButtonBlock.getBlockWidth(), ORANGEButtonBlock.getBlockHeight());
+		ORANGEButtonBlock.setEnabled(false);
+		ORANGEButtonBlock.setVisible(true);
+		ORANGEButtonBlock.setText(" ");
+		ORANGEButtonBlock.setBackground(Color.RED);
+		someName.add(ORANGEButtonBlock);
+		
+		
+		ButtonBlocks PINKButtonBlock = new ButtonBlocks();
+		PINKButtonBlock.setBounds(PINKButtonBlock.getInitialX(),PINKButtonBlock.getInitialY(), PINKButtonBlock.getBlockWidth(), PINKButtonBlock.getBlockHeight());
+		PINKButtonBlock.setEnabled(false);
+		PINKButtonBlock.setVisible(true);
+		PINKButtonBlock.setText(" ");
+		PINKButtonBlock.setBackground(Color.RED);
+		someName.add(PINKButtonBlock);
+		
+		
+		ButtonBlocks MAGENTAButtonBlock = new ButtonBlocks();
+		MAGENTAButtonBlock.setBounds(MAGENTAButtonBlock.getInitialX(),MAGENTAButtonBlock.getInitialY(), MAGENTAButtonBlock.getBlockWidth(), MAGENTAButtonBlock.getBlockHeight());
+		MAGENTAButtonBlock.setEnabled(false);
+		MAGENTAButtonBlock.setVisible(true);
+		MAGENTAButtonBlock.setText(" ");
+		MAGENTAButtonBlock.setBackground(Color.RED);
+		someName.add(MAGENTAButtonBlock);
+		
+		
+		JPanel PlayerOnePanel = new JPanel()
+		{
+			  protected void paintComponent(Graphics g)
+			    {
+			      g.setColor( getBackground() );
+			      g.fillRect(0, 0, getWidth(), getHeight());
+			      super.paintComponent(g);
+			    }
+			};
+	 
+			PlayerOnePanel.setOpaque(false);
+			PlayerOnePanel.setBackground(new Color(255,0,0,20));
+
+		PlayerOnePanel.setPreferredSize(new Dimension(194,382));
+		PlayerOnePanel.setBounds(30, 35, 194, 382);
+		PlayerOnePanel.add(ORANGEButtonBlock);
+		
+		JPanel PlayerTwoPanel = new JPanel()
+		{
+			  protected void paintComponent(Graphics g)
+			    {
+			      g.setColor( getBackground() );
+			      g.fillRect(0, 0, getWidth(), getHeight());
+			      super.paintComponent(g);
+			    }
+			};
+	 
+			PlayerTwoPanel.setOpaque(false);
+			PlayerTwoPanel.setBackground(new Color(255,0,0,20));
+			
+		PlayerTwoPanel.setPreferredSize(new Dimension(194,382));
+		PlayerTwoPanel.setBounds(477, 35, 194, 382);
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

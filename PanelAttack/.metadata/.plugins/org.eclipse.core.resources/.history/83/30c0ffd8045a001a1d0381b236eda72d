@@ -1,0 +1,41 @@
+package PanelAttackPackage;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class PlayersPanel extends JPanel
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	public PlayersPanel()
+	{
+		JPanel PlayerPanel = new JPanel()
+		{
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			protected void paintComponent(Graphics g)
+			{
+				g.setColor( getBackground() );
+				g.fillRect(0, 0, getWidth(), getHeight());
+				super.paintComponent(g);
+			}
+		};
+
+		PlayerPanel.setOpaque(false);
+		PlayerPanel.setBackground(new Color(255,0,0,20));
+		PlayerPanel.setPreferredSize(new Dimension(194,382));
+		PlayerPanel.setVisible(true);
+
+	}
+
+}

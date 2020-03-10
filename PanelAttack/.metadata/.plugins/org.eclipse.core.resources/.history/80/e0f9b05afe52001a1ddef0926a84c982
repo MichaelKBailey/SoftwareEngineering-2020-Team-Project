@@ -1,0 +1,198 @@
+package PanelAttackPackage;
+
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+
+public class InitializePlayerPanels extends JPanel 
+{
+
+	InitializePlayerPanels()
+	{
+	// - - - - - - - - - - PLAYER 1 STUFF - - - - - - - - - - //
+		JPanel PlayerOnePanel = new JPanel()
+		{
+			protected void paintComponent(Graphics g)			//Overwriting the built-in paintComponent method so we can have opaque panels
+			{
+			  g.setColor( getBackground() );
+			  g.fillRect(0, 0, getWidth(), getHeight());
+			  super.paintComponent(g);
+			}
+		};
+		
+		PlayerOnePanel.setOpaque(false);
+		PlayerOnePanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
+		PlayerOnePanel.setBounds(30, 30, 194, 384);
+		PlayerOnePanel.setLayout(null);
+		
+		ArrayList <BlockButtons> PlayerOneArrayList = new ArrayList<BlockButtons>();
+		
+		
+		
+	// - - - - - - - - - - PLAYER 2 STUFF - - - - - - - - - - //
+		
+		JPanel PlayerTwoPanel = new JPanel()
+		{
+			protected void paintComponent(Graphics g)			//Overwriting the built-in paintComponent method so we can have opaque panels
+			{
+			  g.setColor( getBackground() );
+			  g.fillRect(0, 0, getWidth(), getHeight());
+			  super.paintComponent(g);
+			}
+		};
+		
+		PlayerTwoPanel.setOpaque(false);
+		PlayerTwoPanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
+		PlayerTwoPanel.setBounds(30, 30, 194, 384);
+		PlayerTwoPanel.setLayout(null);
+		
+		ArrayList <BlockButtons> PlayerTwoArrayList = new ArrayList<BlockButtons>();
+		
+		
+	}
+	
+	public class BlockButtons implements Prototype 				//Nested class for the blocks themselves
+	{
+		private static final int MAX_WIDTH = 30;
+		private static final int MAX_HEIGHT = 30;	
+	
+	public BlockButtons() 
+	{
+	JButton Block = new JButton("");
+	Block.setPreferredSize(new Dimension(30, 30));
+	Block.setEnabled(false);
+
+	}
+	
+	public void GenerateRandomBlock()
+	{
+		
+	Random rand = new Random();
+	JButton Block = new JButton("");
+	int upperBound = 9;
+	int incrementX = 32;		//Used for initial setup to load 5 rows of blocks for the game to start
+	int incrementY = 32;		//Used for initial setup to load 5 rows of blocks for the game to start
+	Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+	int initialXPosition = 2;
+	int initialYPosition = -30;
+	int currentXPosition;
+	int currentYPosition;
+	
+	
+	for(int i=0; i<5; i++)
+	{
+		
+		//Updates the blocks already in production
+		Block.setBounds(currentXPosition, currentYPosition + (incrementX * i), MAX_WIDTH, MAX_HEIGHT);
+		Block.setEnabled(true);
+		
+		for(int j=0; j<6; j++)
+		{
+			int randomBlock = rand.nextInt(upperBound);
+			
+			switch(randomBlock)
+			{
+			   // case statements
+			   // values must be of same type of expression
+			   case 1 :
+			      // Statements
+					Block = new JButton("");
+					Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+					Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+					Block.setEnabled(false);
+					Block.setBackground(Color.RED);
+
+				   
+			      break; // break is optional
+			   
+			   case 2 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.BLUE);
+
+					   
+				      break; // break is optional
+			   case 3 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.GREEN);
+
+					   
+				      break; // break is optional
+			   case 4 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.ORANGE);
+
+					   
+				      break; // break is optional
+			   case 5 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.YELLOW);
+
+					   
+				      break; // break is optional
+			   case 6 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.CYAN);
+
+					   
+				      break; // break is optional
+			   case 7 :
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.BLACK);
+
+					   
+				      break; // break is optional
+			   default : 
+				   // No break is needed in the default case.
+				      // Statements
+						Block = new JButton("");
+						Block.setPreferredSize(new Dimension(MAX_WIDTH, MAX_HEIGHT));
+						Block.setBounds(initialXPosition + (incrementX *j), initialYPosition, MAX_WIDTH, MAX_HEIGHT);
+						Block.setEnabled(false);
+						Block.setBackground(Color.GRAY);
+
+						
+			}
+		}
+	}
+	
+	
+	}
+
+	public Prototype getClone() 
+	{
+		// TODO Auto-generated method stub
+		return new BlockButtons();
+	}
+	
+	
+
+	
+	
+
+	
+
+}
