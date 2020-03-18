@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\Michael\Desktop\Software Engineering\PanelAttack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2601298094.index
-\GameDWP\src

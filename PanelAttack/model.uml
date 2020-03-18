@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_T7azgFKgEeqj66su646BZA" name="model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_UFptkFKgEeqj66su646BZA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5s4WkGg2Eeqd05ZJLVAUYQ" name="LoginData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__NAXQGg2Eeqd05ZJLVAUYQ" name="RegisterData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ABUwIGg3Eeqd05ZJLVAUYQ" name="RegisterControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AwduEGg3Eeqd05ZJLVAUYQ" name="LoginControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cq8b8Gg3Eeqd05ZJLVAUYQ" name="GameLayoutManager">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fUILQGhkEeq3Q9ZokpzCrA" name="LOGINPANEL" isStatic="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gVndcGhkEeq3Q9ZokpzCrA" name="REGISTERPANEL" isStatic="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hx3ZAGhkEeq3Q9ZokpzCrA" name="MAINMENUPANEL" isStatic="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ihs6gGhkEeq3Q9ZokpzCrA" name="GAMEPLAYAREAPANEL" isStatic="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jUBIQGhkEeq3Q9ZokpzCrA" name="GAMEOVERPANEL" isStatic="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_M4YzQGhlEeq3Q9ZokpzCrA" name="LoginUsernameTextField"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OV8WYGhlEeq3Q9ZokpzCrA" name="LoginPasswordTextField"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_O-2wgGhlEeq3Q9ZokpzCrA" name="RegisterUsernameTextField"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_QlewEGhlEeq3Q9ZokpzCrA" name="RegisterPasswordTextField"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Rq8jUGhlEeq3Q9ZokpzCrA" name="RegisterConfirmPasswordTextField"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eDF6oGg3Eeqd05ZJLVAUYQ" name="WelcomeData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_n3nTQGg4Eeqd05ZJLVAUYQ" name="UserData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_oaIKcGg4Eeqd05ZJLVAUYQ" name="MoveData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_o5OhQGg4Eeqd05ZJLVAUYQ" name="ButtonBlocks"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_u7PHAGg4Eeqd05ZJLVAUYQ" name="Class21"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7-h-MGg4Eeqd05ZJLVAUYQ" name="GameServer"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__g1AQGg4Eeqd05ZJLVAUYQ" name="DatabaseControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FLsRUGg5Eeqd05ZJLVAUYQ" name="GameClient"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aOG7MGg5Eeqd05ZJLVAUYQ" name="WelcomeControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_u8VoUGg6Eeqd05ZJLVAUYQ" name="Class20"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_xK3VYGg6Eeqd05ZJLVAUYQ" name="ClientGUI">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_V0_T8Gg7Eeqd05ZJLVAUYQ" name="Imports" client="_xK3VYGg6Eeqd05ZJLVAUYQ" supplier="_x1tpMGg6Eeqd05ZJLVAUYQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_x1tpMGg6Eeqd05ZJLVAUYQ" name="GameClient">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_-_9AcGg7Eeqd05ZJLVAUYQ" name="Imports" client="_x1tpMGg6Eeqd05ZJLVAUYQ" supplier="_5WAx4Gg6Eeqd05ZJLVAUYQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0MU7QGg6Eeqd05ZJLVAUYQ" name="ServerUI">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_w-yy0Gg7Eeqd05ZJLVAUYQ" name="Imports" client="_0MU7QGg6Eeqd05ZJLVAUYQ" supplier="_0k8PkGg6Eeqd05ZJLVAUYQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0k8PkGg6Eeqd05ZJLVAUYQ" name="GameServer">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_6MaY8Gg7Eeqd05ZJLVAUYQ" name="Imports" client="_0k8PkGg6Eeqd05ZJLVAUYQ" supplier="_0zOjMGg6Eeqd05ZJLVAUYQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_AxUQYGg8Eeqd05ZJLVAUYQ" name="Imports" client="_0k8PkGg6Eeqd05ZJLVAUYQ" supplier="_5WAx4Gg6Eeqd05ZJLVAUYQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0zOjMGg6Eeqd05ZJLVAUYQ" name="Database">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_8U2FEGg7Eeqd05ZJLVAUYQ" name="Imports" client="_0zOjMGg6Eeqd05ZJLVAUYQ" supplier="_4ZUgIGg6Eeqd05ZJLVAUYQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4ZUgIGg6Eeqd05ZJLVAUYQ" name="JDBC"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_5WAx4Gg6Eeqd05ZJLVAUYQ" name="OCSF"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Z4_foGhhEeq3Q9ZokpzCrA" name="GameOverControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Z5AGsGhhEeq3Q9ZokpzCrA" name="GameOverData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_acU2MGhhEeq3Q9ZokpzCrA" name="MainMenuControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_a-d58GhhEeq3Q9ZokpzCrA" name="MainMenuData"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_biBS8GhhEeq3Q9ZokpzCrA" name="GamePlayAreaControl"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cKXsYGhhEeq3Q9ZokpzCrA" name="GamePlayAreaData"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5Z9hIGhjEeq3Q9ZokpzCrA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5Z9hIWhjEeq3Q9ZokpzCrA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
