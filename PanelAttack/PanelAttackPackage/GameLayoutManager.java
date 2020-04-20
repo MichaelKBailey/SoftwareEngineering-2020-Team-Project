@@ -9,6 +9,8 @@ import javax.swing.border.BevelBorder;
 public class GameLayoutManager implements ItemListener {
 
 	JPanel cards; //a panel that uses CardLayout
+	LoginControl lc;
+	RegisterControl rc;
 	final static String WELCOMEPANEL = "Welcome Screen";
 	final static String LOGINPANEL = "Login Panel";
 	final static String REGISTERPANEL = "Register Panel";
@@ -20,7 +22,13 @@ public class GameLayoutManager implements ItemListener {
 	private JTextField RegisterConfirmPasswordTextField;
 	private JTextField RegisterPasswordTextField;
 	private JTextField RegisterUsernameTextField;
-
+	private JPanel LoginPanel;
+	private JPanel RegisterPanel;
+	private JPanel MainMenuPanel;
+	private JPanel GamePlayAreaPanel;
+	private JPanel GameOverPanel;
+	private GameClient client;
+	private GameServer server; // These can be placeholders for now
 
 	public void addComponentToPane(Container pane) {
 		//Put the JComboBox in a JPanel to get a nicer look.
@@ -38,15 +46,15 @@ public class GameLayoutManager implements ItemListener {
 		JPanel WelcomePanel = new JPanel();
 		WelcomePanel.setBounds(0, 0, 125, 100);
 
-		JPanel LoginPanel = new JPanel();
+		LoginPanel = new JPanel();
 
-		JPanel RegisterPanel = new JPanel();
+		RegisterPanel = new JPanel();
 
-		JPanel MainMenuPanel = new JPanel();
+		MainMenuPanel = new JPanel();
 
-		JPanel GamePlayAreaPanel = new JPanel();
+		GamePlayAreaPanel = new JPanel();
 
-		JPanel GameOverPanel = new JPanel();
+		GameOverPanel = new JPanel();
 
 		//Create the panel that contains the "cards".
 		cards = new JPanel(new CardLayout());
@@ -92,6 +100,8 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(LoginPanel, LOGINPANEL);
 		LoginPanel.setLayout(null);
 		
+		LoginControl lc = new LoginControl(LoginPanel, client);
+		
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setBounds(120, 73, 85, 16);
@@ -114,6 +124,9 @@ public class GameLayoutManager implements ItemListener {
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(223, 207, 98, 26);
+		
+		btnSubmit.addActionListener(lc); //Submit action listener
+		
 		LoginPanel.add(btnSubmit);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -125,8 +138,10 @@ public class GameLayoutManager implements ItemListener {
 				cl.show(cards, WELCOMEPANEL);
 			}
 		});
+		
 		btnCancel.setBounds(400, 207, 98, 26);
 		LoginPanel.add(btnCancel);
+		
 		cards.add(RegisterPanel, REGISTERPANEL);
 		RegisterPanel.setLayout(null);
 		
@@ -340,7 +355,7 @@ public class GameLayoutManager implements ItemListener {
 		
 		pane.add(comboBoxPane, BorderLayout.PAGE_START);
 		pane.add(cards, BorderLayout.CENTER);
-
+		
 	}
 
 	public void itemStateChanged(ItemEvent evt) {
@@ -365,6 +380,8 @@ public class GameLayoutManager implements ItemListener {
 
 		//Display the window.
 		//frame.pack();
+		
+		//LoginControl lc = new LoginControl(demo.LoginPanel, demo.client);
 		
 		frame.setVisible(true);
 	}

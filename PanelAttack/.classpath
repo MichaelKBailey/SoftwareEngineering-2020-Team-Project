@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/Michael/Desktop/Software Engineering/PanelAttack/PanelAttack/ocsf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ThinkPadX250/git/SoftwareEngineering-2020-Team-Project/PanelAttack/ocsf.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
