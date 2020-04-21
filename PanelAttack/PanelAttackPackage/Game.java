@@ -11,7 +11,7 @@ public class Game
 	
 	public Game(int difficulty) {
 		
-		this.board1 = new Board(30, 35, 194, 382);
+		this.board1 = new Board(30, 35, 194, 382);	//These are from GameLayoutManager player areas.
 		this.board2 = new Board(477, 35, 194, 382);
 		setSpeed(15);
 		this.paused = true;

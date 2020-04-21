@@ -272,7 +272,7 @@ public class GameLayoutManager implements ItemListener {
 		PlayerOnePanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255), new Color(255, 204, 0), new Color(0, 102, 204)));
 		PlayerOnePanel.setOpaque(true);
 		PlayerOnePanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
-		PlayerOnePanel.setBounds(30, 35, 194, 382);
+		PlayerOnePanel.setBounds(30, 35, 194, 382);		//If this changes, edit Game.java
 		GamePlayAreaPanel.add(PlayerOnePanel);
 		PlayerOnePanel.setLayout(null);
 		PlayerOnePanel.setVisible(false);
@@ -289,7 +289,7 @@ public class GameLayoutManager implements ItemListener {
 		PlayerTwoPanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255), new Color(255, 204, 0), new Color(0, 102, 204)));
 		PlayerTwoPanel.setOpaque(true);
 		PlayerTwoPanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
-		PlayerTwoPanel.setBounds(477, 35, 194, 382);
+		PlayerTwoPanel.setBounds(477, 35, 194, 382);	//If this changes, edit Game.java
 		GamePlayAreaPanel.add(PlayerTwoPanel);
 		PlayerTwoPanel.setLayout(null);
 		PlayerTwoPanel.setVisible(false);
