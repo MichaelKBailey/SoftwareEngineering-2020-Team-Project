@@ -29,16 +29,66 @@ public class Board
 	public void generateTrash(int width, int height, boolean right0left1) {
 		//Trash blocks either fill the board (6blocks wide) or are against the left or right side (4blocks wide)
 		
+		generateNewRow(grid.size());	//if the board has 5 rows, indices 0-4, then size() returns 5 which will be the index of the next row on top
+		for (ButtonBlocks b : grid.get(grid.size()-1)) {	//set the trash flag on the new row
+			b.setTrash(true);
+			b.setColor(Color.gray);
+		}
+		if (width == 4) {
+			if (right0left1 == true) {
+				grid.get(grid.size()).set(4, null);
+				grid.get(grid.size()).set(5, null);
+			}
+			else {
+				grid.get(grid.size()).set(0, null);
+				grid.get(grid.size()).set(1, null);
+			}
+		}
 	}
 	
 	public void generateNewRow(int row_index) {
 		//row_index is 0 for a new row at the bottom/below the bottom
 		ArrayList<ButtonBlocks> newrow = new ArrayList<ButtonBlocks>();
-		//newrow.add(0, new ButtonBlocks());
+		int new_y = 0;
+		
+		//Is this a new row at the bottom, or trash blocks at the top?
+		if (row_index == 0) {
+			newrow.add(0, new ButtonBlocks(x, new_y));
+			newrow.add(1, new ButtonBlocks(x+30, new_y));
+			newrow.add(2, new ButtonBlocks(x+60, new_y));
+			newrow.add(3, new ButtonBlocks(x+90, new_y));
+			newrow.add(4, new ButtonBlocks(x+120, new_y));
+			newrow.add(5, new ButtonBlocks(x+150, new_y));
+			grid.add(0, newrow);
+		}
+		else {
+			//Find a non-null block in the topmost row to get its y coord, then add 40 for the new row's y
+			for (ButtonBlocks b : grid.get(grid.size()-1)) {
+				if (b != null) {
+					new_y = b.getCurrentY() + 40;
+					break;
+				}
+			}
+	
+			newrow.add(0, new ButtonBlocks(x, new_y));
+			newrow.add(1, new ButtonBlocks(x+30, new_y));
+			newrow.add(2, new ButtonBlocks(x+60, new_y));
+			newrow.add(3, new ButtonBlocks(x+90, new_y));
+			newrow.add(4, new ButtonBlocks(x+120, new_y));
+			newrow.add(5, new ButtonBlocks(x+150, new_y));
+			grid.add(grid.size(), newrow);
+		}
+		
+		//Generate the colors for the new row
+		for (ButtonBlocks b : newrow) {
+			b.setColor(randomColor());
+		}
 	}
 	
-	public void changeBlockPosition (int x1, int y1, int x2, int y2) {
-		
+	public boolean changeBlockPosition (int x1, int y1, int x2, int y2) {
+		//Returns false if block at either position is null;
+		//if (grid.get(y1))
+		return true;
 	}
 	
 	public boolean advanceGrid() {
@@ -51,17 +101,22 @@ public class Board
 		
 		for (ArrayList<ButtonBlocks>row : grid) {
 			for (ButtonBlocks block : row) {
-				block.setCurrentY((int)(block.getCurrentY()*1.15));
+				block.setCurrentY((block.getCurrentY() + 2));
 			}
 		}
 		
 		//Check if the last row's y coordinate is above the panel height, in which case GAME OVER:
-		if (grid.get(grid.size()-1).get(0).getCurrentY() > y) {
-			return false;
+		for (ButtonBlocks b : grid.get(grid.size()-1)) {
+			if (b != null) {
+				if (grid.get(grid.size()-1).get(0).getCurrentY() > y) {
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
 		}
-		else {
-			return true;
-		}
+		return true;
 	}
 	
 	private Color randomColor() {

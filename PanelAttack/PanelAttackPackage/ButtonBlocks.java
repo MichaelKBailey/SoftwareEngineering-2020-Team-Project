@@ -19,15 +19,16 @@ public class ButtonBlocks extends JButton
 	private String currentState = "At Rest";
 	private String colorMatch = "No";
 	private Color color;
+	private boolean trash;
 
 	public ButtonBlocks(int x, int y)
 	{
 		super();
 		this.setPreferredSize(new Dimension(30, 30));
-		this.setco
+		this.setBounds(x,y,30,30);
 	}
 
-
+	
 
 	/**
 	 * @return the blockWidth
@@ -148,5 +149,12 @@ public class ButtonBlocks extends JButton
 		return this.color;
 	}
 	
+	public void setTrash(boolean trash) {
+		this.trash = trash;
+	}
+	
+	public boolean getTrash() {
+		return this.trash;
+	}
 	
 }
