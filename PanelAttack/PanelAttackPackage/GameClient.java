@@ -14,8 +14,13 @@ public class GameClient extends AbstractClient  {
 	
 	public void handleMessageFromServer(Object object) {
 		
-		if (object instanceof String) {}
+		if (object instanceof String) {
+			
+		}
 		
+		else if (object instanceof Board) {
+			
+		}
 		
 	}
 

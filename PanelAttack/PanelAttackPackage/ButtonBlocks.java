@@ -18,7 +18,7 @@ public class ButtonBlocks extends JButton
 	private int currentX;
 	private String currentState = "At Rest";
 	private String colorMatch = "No";
-	
+	private Color color;
 
 	public ButtonBlocks()
 	{
@@ -139,7 +139,13 @@ public class ButtonBlocks extends JButton
 		this.colorMatch = colorMatch;
 	}
 	
+	public void setColor(Color color) {
+		this.color = color;
+	}
 	
+	public Color getColor(Color color) {
+		return this.color;
+	}
 	
 	
 }
