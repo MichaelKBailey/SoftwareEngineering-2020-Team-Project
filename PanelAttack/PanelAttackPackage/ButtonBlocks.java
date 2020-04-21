@@ -20,10 +20,11 @@ public class ButtonBlocks extends JButton
 	private String colorMatch = "No";
 	private Color color;
 
-	public ButtonBlocks()
+	public ButtonBlocks(int x, int y)
 	{
 		super();
-
+		this.setPreferredSize(new Dimension(30, 30));
+		this.set
 	}
 
 

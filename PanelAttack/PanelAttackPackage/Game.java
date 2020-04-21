@@ -7,8 +7,9 @@ public class Game
 	private boolean paused;	//True if game hasnt started
 	private Board board1;
 	private Board board2;
+	public int difficulty;	//1,2,3 = easy, med, hard
 	
-	public Game() {
+	public Game(int difficulty) {
 		
 		this.board1 = new Board();
 		this.board2 = new Board();
