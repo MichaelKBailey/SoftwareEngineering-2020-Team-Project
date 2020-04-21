@@ -314,7 +314,7 @@ public class GameLayoutManager implements ItemListener {
 		backgroundLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		backgroundLabel.setBounds(0, 0, 701, 452);
 		GamePlayAreaPanel.add(backgroundLabel);
-		backgroundLabel.setIcon(new ImageIcon("C:\\Users\\Michael\\Desktop\\Software Engineering\\PanelAttack\\UseThis.jpg"));
+		backgroundLabel.setIcon(new ImageIcon("UseThis.jpg"));
 		cards.add(GameOverPanel, GAMEOVERPANEL);
 		GameOverPanel.setLayout(null);
 
