@@ -2,11 +2,11 @@ package PanelAttackPackage;
 
 
 public class Game
-{	private int speed; 	//Number of milliseconds per grid advance
-	private int ticknum;//Number of milliseconds per speed up
+{	private int speed; 		//Number of milliseconds per grid advance
+	private int ticknum;	//Number of milliseconds per speed up
 	private boolean paused;	//True if game hasnt started
-	private Board board1;
-	private Board board2;
+	private Board board1;	//Game data for player 1
+	private Board board2;	//Game data for player 2
 	public int difficulty;	//1,2,3 = easy, med, hard
 	
 	public Game(int difficulty) {
@@ -30,7 +30,15 @@ public class Game
 	}
 	
 	public void processMove() {
-		
+		//Check if the blocks can be switched:
+		/*
+		 * if (|| ) {
+			return;
+		}
+		else {
+			
+		}
+		*/
 	}
 	
 	public void checkForCombo() {

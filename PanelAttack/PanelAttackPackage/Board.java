@@ -32,6 +32,7 @@ public class Board
 		generateNewRow(grid.size());	//if the board has 5 rows, indices 0-4, then size() returns 5 which will be the index of the next row on top
 		for (ButtonBlocks b : grid.get(grid.size()-1)) {	//set the trash flag on the new row
 			b.setTrash(true);
+			b.setColor(Color.gray);
 		}
 		if (width == 4) {
 			if (right0left1 == true) {
@@ -76,6 +77,11 @@ public class Board
 			newrow.add(4, new ButtonBlocks(x+120, new_y));
 			newrow.add(5, new ButtonBlocks(x+150, new_y));
 			grid.add(grid.size(), newrow);
+		}
+		
+		//Generate the colors for the new row
+		for (ButtonBlocks b : newrow) {
+			b.setColor(randomColor());
 		}
 	}
 	
