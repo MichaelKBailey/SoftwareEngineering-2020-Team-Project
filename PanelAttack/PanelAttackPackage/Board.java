@@ -6,12 +6,23 @@ import java.util.Random;
 
 public class Board
 {	//This class abstracts the precise pixel positioning of the button blocks into integer indices in a grid
+	
+	private int x;		//topleft x coordinate of the boundaries for blocks
+	private int y;		//topleft y coordinate of the boundaries for blocks
+	private int width;	//width of boundaries for blocks
+	private int height;	//height of boundaries for blocks
+	
 	public ArrayList<ArrayList<ButtonBlocks>> grid;
 
-	public Board() {
+	public Board(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		
 		//Generate the 6 rows of starting blocks:
 		for (int i = 0; i < 6; i++) {
-			generateNewRow();
+			generateNewRow(0);
 		}
 	}
 	
@@ -20,9 +31,10 @@ public class Board
 		
 	}
 	
-	public void generateNewRow() {
+	public void generateNewRow(int row_index) {
+		//row_index is 0 for a new row at the bottom/below the bottom
 		ArrayList<ButtonBlocks> newrow = new ArrayList<ButtonBlocks>();
-		newrow.add(0, new ButtonBlocks()
+		//newrow.add(0, new ButtonBlocks());
 	}
 	
 	public void changeBlockPosition (int x1, int y1, int x2, int y2) {
@@ -44,7 +56,7 @@ public class Board
 		}
 		
 		//Check if the last row's y coordinate is above the panel height, in which case GAME OVER:
-		if (grid.get(grid.size()-1).get(0).getCurrentY() > ) {
+		if (grid.get(grid.size()-1).get(0).getCurrentY() > y) {
 			return false;
 		}
 		else {

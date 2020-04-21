@@ -24,7 +24,7 @@ public class ButtonBlocks extends JButton
 	{
 		super();
 		this.setPreferredSize(new Dimension(30, 30));
-		this.set
+		this.setco
 	}
 
 

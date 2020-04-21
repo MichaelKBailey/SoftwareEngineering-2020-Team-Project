@@ -11,8 +11,8 @@ public class Game
 	
 	public Game(int difficulty) {
 		
-		this.board1 = new Board();
-		this.board2 = new Board();
+		this.board1 = new Board(30, 35, 194, 382);
+		this.board2 = new Board(477, 35, 194, 382);
 		setSpeed(15);
 		this.paused = true;
 	}
