@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Board
 {	//This class abstracts the precise pixel positioning of the button blocks into integer indices in a grid
-	public ArrayList<ArrayList<String>> grid;
+	public ArrayList<ArrayList<ButtonBlocks>> grid;
 
 	public Board(/*difficulty*/) {
 		//Generate the starting blocks:

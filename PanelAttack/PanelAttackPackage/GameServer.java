@@ -7,9 +7,10 @@ public class GameServer extends AbstractServer {
 	private Database db;
 	
 	
-	public GameServer(int port) {
+	public GameServer(int port, Database db) {
 		super(port);
 		this.setTimeout(500);
+		this.db = db;
 	}
 
 	protected void handleMessageFromClient(Object object, ConnectionToClient connToClient) {

@@ -1,28 +1,23 @@
 package PanelAttackPackage;
 
-import java.util.concurrent.*;
-import java.util.Date;
 
 public class Game
 {	private int speed; 	//Number of milliseconds per grid advance
 	private int ticknum;//Number of milliseconds per speed up
-	private ScheduledExecutorService timer;
+	private boolean paused;	//True if game hasnt started
 	private Board board1;
 	private Board board2;
 	
 	public Game() {
-		timer = Executors.newSingleThreadScheduledExecutor();
+		
 		this.board1 = new Board();
 		this.board2 = new Board();
 		setSpeed(15);
+		this.paused = true;
 	}
 
 	public void gameStart() {
-		//Start the timer calling once per milisec. Decrease this.speed to speed up
-		timer.scheduleWithFixedDelay(new Runnable() {
-			@Override
-			public void run() { tick();	}
-		}, 0, 1, TimeUnit.MILLISECONDS);
+		this.paused = false;
 	}
 	
 	public void tick() {
