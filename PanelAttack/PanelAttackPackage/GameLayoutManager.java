@@ -30,19 +30,19 @@ public class GameLayoutManager implements ItemListener {
 	private JPanel GamePlayAreaPanel;
 	private JPanel GameOverPanel;
 	private GameClient client;
-	private GameServer server; 
 	// These can be placeholders for now
 
 	public void addComponentToPane(Container pane) {
 		// Set up the chat client.
-		GameClient client = new GameClient();
+		client = new GameClient();
+		
 		try
 		{
 			client.openConnection();
 		}
 		catch (IOException e)
 		{
-			e.printStackTrace();
+			System.out.println("The client couldn't connect.");
 		}
 		
 		//Put the JComboBox in a JPanel to get a nicer look.

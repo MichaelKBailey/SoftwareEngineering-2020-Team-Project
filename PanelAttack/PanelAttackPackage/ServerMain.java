@@ -31,6 +31,15 @@ public class ServerMain
 		}
 		
 		server = new GameServer(8300, db);
+		try
+		{
+			server.listen();
+
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//Start the timer calling once per milisec. Decrease this.speed to speed up
 		timer = Executors.newSingleThreadScheduledExecutor();
