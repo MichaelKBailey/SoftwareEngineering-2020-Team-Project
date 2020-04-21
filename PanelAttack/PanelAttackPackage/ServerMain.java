@@ -4,6 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.*;
+import java.io.IOException;
 import java.util.Date;
 
 public class ServerMain
@@ -22,8 +23,14 @@ public class ServerMain
 	5. database (Database.java)
 	*/
 	public ServerMain() {
-		this.db = new Database();
-		server = new GameServer(5500, db);
+		
+		try {
+			this.db = new Database();
+		} catch (IOException e) {
+			System.out.println("The database failed to start.");
+		}
+		
+		server = new GameServer(8300, db);
 		
 		//Start the timer calling once per milisec. Decrease this.speed to speed up
 		timer = Executors.newSingleThreadScheduledExecutor();

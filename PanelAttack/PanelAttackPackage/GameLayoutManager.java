@@ -2,6 +2,8 @@ package PanelAttackPackage;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
@@ -28,9 +30,21 @@ public class GameLayoutManager implements ItemListener {
 	private JPanel GamePlayAreaPanel;
 	private JPanel GameOverPanel;
 	private GameClient client;
-	private GameServer server; // These can be placeholders for now
+	private GameServer server; 
+	// These can be placeholders for now
 
 	public void addComponentToPane(Container pane) {
+		// Set up the chat client.
+		GameClient client = new GameClient();
+		try
+		{
+			client.openConnection();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
 		//Put the JComboBox in a JPanel to get a nicer look.
 		JPanel comboBoxPane = new JPanel(); //use FlowLayout
 		String comboBoxItems[] = { WELCOMEPANEL, LOGINPANEL, REGISTERPANEL, MAINMENUPANEL, GAMEPLAYAREAPANEL, GAMEOVERPANEL };
@@ -38,8 +52,8 @@ public class GameLayoutManager implements ItemListener {
 		CardSelector.setEditable(false);
 		CardSelector.addItemListener(this);
 		comboBoxPane.add(CardSelector);
-		
-		
+
+
 
 		//Create the "cards".
 
@@ -60,20 +74,20 @@ public class GameLayoutManager implements ItemListener {
 		cards = new JPanel(new CardLayout());
 		cards.add(WelcomePanel, WELCOMEPANEL);
 		WelcomePanel.setLayout(null);
-		
+
 		JLabel WelcomeLabelOne = new JLabel("Welcome To:");
 		WelcomeLabelOne.setHorizontalAlignment(SwingConstants.CENTER);
 		WelcomeLabelOne.setFont(new Font("Dialog", Font.PLAIN, 25));
 		WelcomeLabelOne.setBounds(296, 68, 163, 55);
 		WelcomePanel.add(WelcomeLabelOne);
-		
+
 		JLabel WelcomeLabelTwo = new JLabel("PANEL ATTACK");
 		WelcomeLabelTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		WelcomeLabelTwo.setForeground(Color.RED);
 		WelcomeLabelTwo.setFont(new Font("Dialog", Font.PLAIN, 44));
 		WelcomeLabelTwo.setBounds(198, 191, 359, 80);
 		WelcomePanel.add(WelcomeLabelTwo);
-		
+
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() 
 		{
@@ -85,7 +99,7 @@ public class GameLayoutManager implements ItemListener {
 		});
 		btnLogin.setBounds(198, 318, 98, 26);
 		WelcomePanel.add(btnLogin);
-		
+
 		JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() 
 		{
@@ -99,36 +113,36 @@ public class GameLayoutManager implements ItemListener {
 		WelcomePanel.add(btnRegister);
 		cards.add(LoginPanel, LOGINPANEL);
 		LoginPanel.setLayout(null);
-		
+
 		LoginControl lc = new LoginControl(LoginPanel, client);
-		
+
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setBounds(120, 73, 85, 16);
 		LoginPanel.add(lblUsername);
-		
+
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword.setBounds(120, 133, 85, 16);
 		LoginPanel.add(lblPassword);
-		
+
 		LoginUsernameTextField = new JTextField();
 		LoginUsernameTextField.setBounds(223, 69, 275, 20);
 		LoginPanel.add(LoginUsernameTextField);
 		LoginUsernameTextField.setColumns(10);
-		
+
 		LoginPasswordTextField = new JTextField();
 		LoginPasswordTextField.setBounds(223, 129, 275, 20);
 		LoginPanel.add(LoginPasswordTextField);
 		LoginPasswordTextField.setColumns(10);
-		
+
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(223, 207, 98, 26);
-		
+
 		btnSubmit.addActionListener(lc); //Submit action listener
-		
+
 		LoginPanel.add(btnSubmit);
-		
+
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() 
 		{
@@ -138,47 +152,47 @@ public class GameLayoutManager implements ItemListener {
 				cl.show(cards, WELCOMEPANEL);
 			}
 		});
-		
+
 		btnCancel.setBounds(400, 207, 98, 26);
 		LoginPanel.add(btnCancel);
-		
+
 		cards.add(RegisterPanel, REGISTERPANEL);
 		RegisterPanel.setLayout(null);
-		
+
 		JLabel lblUsername_1 = new JLabel("Username:");
 		lblUsername_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername_1.setBounds(61, 50, 133, 16);
 		RegisterPanel.add(lblUsername_1);
-		
+
 		JLabel lblPassword_1 = new JLabel("Password:");
 		lblPassword_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPassword_1.setBounds(61, 95, 133, 16);
 		RegisterPanel.add(lblPassword_1);
-		
+
 		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
 		lblConfirmPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		lblConfirmPassword.setBounds(61, 135, 133, 16);
 		RegisterPanel.add(lblConfirmPassword);
-		
+
 		RegisterConfirmPasswordTextField = new JTextField();
 		RegisterConfirmPasswordTextField.setBounds(212, 131, 263, 20);
 		RegisterPanel.add(RegisterConfirmPasswordTextField);
 		RegisterConfirmPasswordTextField.setColumns(10);
-		
+
 		RegisterPasswordTextField = new JTextField();
 		RegisterPasswordTextField.setColumns(10);
 		RegisterPasswordTextField.setBounds(212, 91, 263, 20);
 		RegisterPanel.add(RegisterPasswordTextField);
-		
+
 		RegisterUsernameTextField = new JTextField();
 		RegisterUsernameTextField.setColumns(10);
 		RegisterUsernameTextField.setBounds(212, 46, 263, 20);
 		RegisterPanel.add(RegisterUsernameTextField);
-		
+
 		JButton btnRegisterSubmit = new JButton("Submit");
 		btnRegisterSubmit.setBounds(212, 188, 98, 26);
 		RegisterPanel.add(btnRegisterSubmit);
-		
+
 		JButton btnRegisterCancel_1 = new JButton("Cancel");
 		btnRegisterCancel_1.addActionListener(new ActionListener() 
 		{
@@ -192,7 +206,7 @@ public class GameLayoutManager implements ItemListener {
 		RegisterPanel.add(btnRegisterCancel_1);
 		cards.add(MainMenuPanel, MAINMENUPANEL);
 		MainMenuPanel.setLayout(null);
-		
+
 		JButton btnNewGame = new JButton("New Game");
 		btnNewGame.addActionListener(new ActionListener() 
 		{
@@ -204,11 +218,11 @@ public class GameLayoutManager implements ItemListener {
 		});
 		btnNewGame.setBounds(81, 81, 98, 26);
 		MainMenuPanel.add(btnNewGame);
-		
+
 		JButton btnFindMatch = new JButton("Find Match");
 		btnFindMatch.setBounds(81, 168, 98, 26);
 		MainMenuPanel.add(btnFindMatch);
-		
+
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.addActionListener(new ActionListener() 
 		{
@@ -220,46 +234,46 @@ public class GameLayoutManager implements ItemListener {
 		});
 		btnLogout.setBounds(301, 391, 98, 26);
 		MainMenuPanel.add(btnLogout);
-		
+
 		JLabel lblMainMenu = new JLabel("Main Menu");
 		lblMainMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMainMenu.setForeground(Color.BLUE);
 		lblMainMenu.setFont(new Font("Dialog", Font.PLAIN, 38));
 		lblMainMenu.setBounds(250, 12, 211, 43);
 		MainMenuPanel.add(lblMainMenu);
-		
+
 		JLabel lblPlayerRecord = new JLabel("Player Record:");
 		lblPlayerRecord.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPlayerRecord.setFont(new Font("Dialog", Font.PLAIN, 15));
 		lblPlayerRecord.setBounds(557, 52, 118, 31);
 		MainMenuPanel.add(lblPlayerRecord);
-		
+
 		JLabel lblWin = new JLabel("Win:");
 		lblWin.setBounds(557, 108, 55, 16);
 		MainMenuPanel.add(lblWin);
-		
+
 		JLabel lblDraw = new JLabel("Draw:");
 		lblDraw.setBounds(557, 183, 55, 16);
 		MainMenuPanel.add(lblDraw);
-		
+
 		JLabel lblLose = new JLabel("Lose:");
 		lblLose.setBounds(557, 266, 55, 16);
 		MainMenuPanel.add(lblLose);
-		
+
 		JLabel lblWinrate = new JLabel("WinRate");
 		lblWinrate.setBounds(557, 136, 55, 16);
 		MainMenuPanel.add(lblWinrate);
-		
+
 		JLabel lblDrawrate = new JLabel("DrawRate");
 		lblDrawrate.setBounds(557, 211, 55, 16);
 		MainMenuPanel.add(lblDrawrate);
-		
+
 		JLabel lblLoserate = new JLabel("LoseRate");
 		lblLoserate.setBounds(557, 294, 55, 16);
 		MainMenuPanel.add(lblLoserate);
 		cards.add(GamePlayAreaPanel, GAMEPLAYAREAPANEL);
 		GamePlayAreaPanel.setLayout(null);
-		
+
 		JPanel PlayerOnePanel = new JPanel()
 		{
 			protected void paintComponent(Graphics g)
@@ -276,7 +290,7 @@ public class GameLayoutManager implements ItemListener {
 		GamePlayAreaPanel.add(PlayerOnePanel);
 		PlayerOnePanel.setLayout(null);
 		PlayerOnePanel.setVisible(false);
-		
+
 		JPanel PlayerTwoPanel = new JPanel()
 		{
 			protected void paintComponent(Graphics g)
@@ -293,7 +307,7 @@ public class GameLayoutManager implements ItemListener {
 		GamePlayAreaPanel.add(PlayerTwoPanel);
 		PlayerTwoPanel.setLayout(null);
 		PlayerTwoPanel.setVisible(false);
-		
+
 		JPanel ScoreBoard = new JPanel()
 		{
 			protected void paintComponent(Graphics g)
@@ -309,7 +323,7 @@ public class GameLayoutManager implements ItemListener {
 		ScoreBoard.setBounds(256, 101, 191, 240);
 		GamePlayAreaPanel.add(ScoreBoard);
 		ScoreBoard.setLayout(null);
-		
+
 		JLabel backgroundLabel = new JLabel("");
 		backgroundLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		backgroundLabel.setBounds(0, 0, 701, 452);
@@ -324,11 +338,11 @@ public class GameLayoutManager implements ItemListener {
 		lblGameOver.setFont(new Font("Dialog", Font.PLAIN, 22));
 		lblGameOver.setBounds(288, 55, 156, 53);
 		GameOverPanel.add(lblGameOver);
-		
+
 		JButton btnPlayAgain = new JButton("Play Again");
 		btnPlayAgain.setBounds(110, 253, 98, 26);
 		GameOverPanel.add(btnPlayAgain);
-		
+
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.addActionListener(new ActionListener() 
 		{
@@ -340,7 +354,7 @@ public class GameLayoutManager implements ItemListener {
 		});
 		btnMainMenu.setBounds(318, 253, 98, 26);
 		GameOverPanel.add(btnMainMenu);
-		
+
 		JButton btnLogout_1 = new JButton("Logout");
 		btnLogout_1.addActionListener(new ActionListener() 
 		{
@@ -352,10 +366,10 @@ public class GameLayoutManager implements ItemListener {
 		});
 		btnLogout_1.setBounds(526, 253, 98, 26);
 		GameOverPanel.add(btnLogout_1);
-		
+
 		pane.add(comboBoxPane, BorderLayout.PAGE_START);
 		pane.add(cards, BorderLayout.CENTER);
-		
+
 	}
 
 	public void itemStateChanged(ItemEvent evt) {
@@ -380,9 +394,9 @@ public class GameLayoutManager implements ItemListener {
 
 		//Display the window.
 		//frame.pack();
-		
+
 		//LoginControl lc = new LoginControl(demo.LoginPanel, demo.client);
-		
+
 		frame.setVisible(true);
 	}
 
