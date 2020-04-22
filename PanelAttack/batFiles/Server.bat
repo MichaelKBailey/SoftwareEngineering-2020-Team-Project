@@ -1,1 +1,2 @@
-java -cp .;ocsf.jar PannelAttack.PanelAttackPackage.ServerMain
+cd ..
+java -cp .;ocsf.jar PanelAttackPackage.ServerMain
