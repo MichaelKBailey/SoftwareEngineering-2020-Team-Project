@@ -1,2 +1,2 @@
 cd ..
-java -cp .;ocsf.jar PanelAttackPackage.ServerMain
+java -cp .;ocsf.jar;mysql-connector-java-5.1.40-bin.jar PanelAttackPackage.ServerMain
