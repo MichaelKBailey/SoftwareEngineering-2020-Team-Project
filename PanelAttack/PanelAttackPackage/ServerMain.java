@@ -28,6 +28,7 @@ public class ServerMain
 			this.db = new Database();
 		} catch (IOException e) {
 			System.out.println("The database failed to start.");
+			e.printStackTrace();
 		}
 		
 		server = new GameServer(8300, db);

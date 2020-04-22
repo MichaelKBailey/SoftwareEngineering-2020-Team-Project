@@ -16,7 +16,7 @@ public class Database
 	{
 		//Read properties file
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("PanelAttack/db.properties");
+		FileInputStream fis = new FileInputStream("db.properties");
 		prop.load(fis);
 		String url = prop.getProperty("url");
 		String user = prop.getProperty("user");
