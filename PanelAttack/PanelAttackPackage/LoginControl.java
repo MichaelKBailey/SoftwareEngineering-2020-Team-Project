@@ -43,4 +43,14 @@ public class LoginControl implements ActionListener {
 		}
 	}
 
+	public void loginSuccess() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void loginFailure() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

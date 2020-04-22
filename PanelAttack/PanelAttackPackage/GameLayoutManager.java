@@ -108,8 +108,9 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(LoginPanel, LOGINPANEL);
 		LoginPanel.setLayout(null);
 
-		LoginControl lc = new LoginControl(LoginPanel, client);
-
+		lc = new LoginControl(LoginPanel, client);
+		rc = new RegisterControl(RegisterPanel, client);
+		
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setBounds(120, 73, 85, 16);
@@ -201,6 +202,7 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(MainMenuPanel, MAINMENUPANEL);
 		MainMenuPanel.setLayout(null);
 
+		
 		JButton btnNewGame = new JButton("New Game");
 		btnNewGame.addActionListener(new ActionListener() 
 		{
@@ -419,5 +421,7 @@ public class GameLayoutManager implements ItemListener {
 			}
 		});
 	}
+
+
 }
 
