@@ -7,10 +7,9 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
-
 public class GameLayoutManager implements ItemListener {
 
-	JPanel cards; //a panel that uses CardLayout
+	JPanel cards; // a panel that uses CardLayout
 	LoginControl lc;
 	RegisterControl rc;
 	final static String WELCOMEPANEL = "Welcome Screen";
@@ -35,27 +34,23 @@ public class GameLayoutManager implements ItemListener {
 	public void addComponentToPane(Container pane) {
 		// Set up the chat client.
 		client = new GameClient();
-		
-		try
-		{
+
+		try {
 			client.openConnection();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println("The client couldn't connect.");
 		}
-		
-		//Put the JComboBox in a JPanel to get a nicer look.
-		JPanel comboBoxPane = new JPanel(); //use FlowLayout
-		String comboBoxItems[] = { WELCOMEPANEL, LOGINPANEL, REGISTERPANEL, MAINMENUPANEL, GAMEPLAYAREAPANEL, GAMEOVERPANEL };
+
+		// Put the JComboBox in a JPanel to get a nicer look.
+		JPanel comboBoxPane = new JPanel(); // use FlowLayout
+		String comboBoxItems[] = { WELCOMEPANEL, LOGINPANEL, REGISTERPANEL, MAINMENUPANEL, GAMEPLAYAREAPANEL,
+				GAMEOVERPANEL };
 		JComboBox CardSelector = new JComboBox(comboBoxItems);
 		CardSelector.setEditable(false);
 		CardSelector.addItemListener(this);
 		comboBoxPane.add(CardSelector);
 
-
-
-		//Create the "cards".
+		// Create the "cards".
 
 		JPanel WelcomePanel = new JPanel();
 		WelcomePanel.setBounds(0, 0, 125, 100);
@@ -70,17 +65,15 @@ public class GameLayoutManager implements ItemListener {
 
 		GameOverPanel = new JPanel();
 
-		//Create the panel that contains the "cards".
+		// Create the panel that contains the "cards".
 		cards = new JPanel(new CardLayout());
 		cards.add(WelcomePanel, WELCOMEPANEL);
 		WelcomePanel.setLayout(null);
 
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, LOGINPANEL);
 			}
 		});
@@ -88,29 +81,28 @@ public class GameLayoutManager implements ItemListener {
 		WelcomePanel.add(btnLogin);
 
 		JButton btnRegister = new JButton("Register");
-		btnRegister.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, REGISTERPANEL);
 			}
 		});
 		btnRegister.setBounds(180, 409, 98, 26);
 		WelcomePanel.add(btnRegister);
-		
-				JLabel WelcomeLabelTwo = new JLabel("");
-				WelcomeLabelTwo.setIcon(new ImageIcon("C:\\Users\\Michael\\Desktop\\PARebuilt\\PanelAttack\\TitleTest.gif"));
-				WelcomeLabelTwo.setHorizontalAlignment(SwingConstants.CENTER);
-				//WelcomeLabelTwo.setFont(new Font("Dialog", Font.PLAIN, 44));
-				WelcomeLabelTwo.setBounds(52, 12, 649, 385);
-				WelcomePanel.add(WelcomeLabelTwo);
+
+		JLabel WelcomeLabelTwo = new JLabel("");
+		WelcomeLabelTwo.setIcon(new ImageIcon("C:\\Users\\Michael\\Desktop\\PARebuilt\\PanelAttack\\TitleTest.gif"));
+		WelcomeLabelTwo.setHorizontalAlignment(SwingConstants.CENTER);
+		// WelcomeLabelTwo.setFont(new Font("Dialog", Font.PLAIN, 44));
+		WelcomeLabelTwo.setBounds(52, 12, 649, 385);
+		WelcomePanel.add(WelcomeLabelTwo);
 		cards.add(LoginPanel, LOGINPANEL);
 		LoginPanel.setLayout(null);
 
 		lc = new LoginControl(LoginPanel, client);
+		lc.setCards(cards);
 		rc = new RegisterControl(RegisterPanel, client);
-		
+
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setBounds(120, 73, 85, 16);
@@ -134,16 +126,14 @@ public class GameLayoutManager implements ItemListener {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(223, 207, 98, 26);
 
-		btnSubmit.addActionListener(lc); //Submit action listener
+		btnSubmit.addActionListener(lc); // Submit action listener
 
 		LoginPanel.add(btnSubmit);
 
 		JButton btnCancel = new JButton("Cancel");
-		btnCancel.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, WELCOMEPANEL);
 			}
 		});
@@ -189,12 +179,10 @@ public class GameLayoutManager implements ItemListener {
 		RegisterPanel.add(btnRegisterSubmit);
 
 		JButton btnRegisterCancel_1 = new JButton("Cancel");
-		btnRegisterCancel_1.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
-				cl.show(cards, WELCOMEPANEL);	
+		btnRegisterCancel_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
+				cl.show(cards, WELCOMEPANEL);
 			}
 		});
 		btnRegisterCancel_1.setBounds(377, 188, 98, 26);
@@ -202,13 +190,10 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(MainMenuPanel, MAINMENUPANEL);
 		MainMenuPanel.setLayout(null);
 
-		
 		JButton btnNewGame = new JButton("New Game");
-		btnNewGame.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnNewGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, GAMEPLAYAREAPANEL);
 			}
 		});
@@ -220,11 +205,9 @@ public class GameLayoutManager implements ItemListener {
 		MainMenuPanel.add(btnFindMatch);
 
 		JButton btnLogout = new JButton("Logout");
-		btnLogout.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, WELCOMEPANEL);
 			}
 		});
@@ -270,52 +253,49 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(GamePlayAreaPanel, GAMEPLAYAREAPANEL);
 		GamePlayAreaPanel.setLayout(null);
 
-		JPanel PlayerOnePanel = new JPanel()
-		{
-			protected void paintComponent(Graphics g)
-			{
-				g.setColor( getBackground() );
+		JPanel PlayerOnePanel = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.setColor(getBackground());
 				g.fillRect(0, 0, getWidth(), getHeight());
 				super.paintComponent(g);
 			}
 		};
-		PlayerOnePanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255), new Color(255, 204, 0), new Color(0, 102, 204)));
+		PlayerOnePanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255),
+				new Color(255, 204, 0), new Color(0, 102, 204)));
 		PlayerOnePanel.setOpaque(true);
-		PlayerOnePanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
-		PlayerOnePanel.setBounds(30, 35, 194, 382);		//If this changes, edit Game.java
+		PlayerOnePanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
+		PlayerOnePanel.setBounds(30, 35, 194, 382); // If this changes, edit Game.java
 		GamePlayAreaPanel.add(PlayerOnePanel);
 		PlayerOnePanel.setLayout(null);
 		PlayerOnePanel.setVisible(false);
 
-		JPanel PlayerTwoPanel = new JPanel()
-		{
-			protected void paintComponent(Graphics g)
-			{
-				g.setColor( getBackground() );
+		JPanel PlayerTwoPanel = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.setColor(getBackground());
 				g.fillRect(0, 0, getWidth(), getHeight());
 				super.paintComponent(g);
 			}
 		};
-		PlayerTwoPanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255), new Color(255, 204, 0), new Color(0, 102, 204)));
+		PlayerTwoPanel.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255),
+				new Color(255, 204, 0), new Color(0, 102, 204)));
 		PlayerTwoPanel.setOpaque(true);
-		PlayerTwoPanel.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
-		PlayerTwoPanel.setBounds(477, 35, 194, 382);	//If this changes, edit Game.java
+		PlayerTwoPanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
+		PlayerTwoPanel.setBounds(477, 35, 194, 382); // If this changes, edit Game.java
 		GamePlayAreaPanel.add(PlayerTwoPanel);
 		PlayerTwoPanel.setLayout(null);
 		PlayerTwoPanel.setVisible(false);
 
-		JPanel ScoreBoard = new JPanel()
-		{
-			protected void paintComponent(Graphics g)
-			{
-				g.setColor( getBackground() );
+		JPanel ScoreBoard = new JPanel() {
+			protected void paintComponent(Graphics g) {
+				g.setColor(getBackground());
 				g.fillRect(0, 0, getWidth(), getHeight());
 				super.paintComponent(g);
 			}
 		};
-		ScoreBoard.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255), new Color(255, 204, 0), new Color(0, 102, 204)));
+		ScoreBoard.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 204, 0), new Color(0, 102, 255),
+				new Color(255, 204, 0), new Color(0, 102, 204)));
 		ScoreBoard.setOpaque(true);
-		ScoreBoard.setBackground(new Color (10,10,10,20)); //This gives us 20% opacity for the panel
+		ScoreBoard.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
 		ScoreBoard.setBounds(256, 101, 191, 240);
 		GamePlayAreaPanel.add(ScoreBoard);
 		ScoreBoard.setLayout(null);
@@ -328,7 +308,6 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(GameOverPanel, GAMEOVERPANEL);
 		GameOverPanel.setLayout(null);
 
-
 		JLabel lblGameOver = new JLabel("GAME OVER");
 		lblGameOver.setForeground(Color.RED);
 		lblGameOver.setFont(new Font("Dialog", Font.PLAIN, 22));
@@ -340,11 +319,9 @@ public class GameLayoutManager implements ItemListener {
 		GameOverPanel.add(btnPlayAgain);
 
 		JButton btnMainMenu = new JButton("Main Menu");
-		btnMainMenu.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnMainMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, MAINMENUPANEL);
 			}
 		});
@@ -352,11 +329,9 @@ public class GameLayoutManager implements ItemListener {
 		GameOverPanel.add(btnMainMenu);
 
 		JButton btnLogout_1 = new JButton("Logout");
-		btnLogout_1.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
-				CardLayout cl = (CardLayout)(cards.getLayout());
+		btnLogout_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CardLayout cl = (CardLayout) (cards.getLayout());
 				cl.show(cards, WELCOMEPANEL);
 			}
 		});
@@ -369,29 +344,28 @@ public class GameLayoutManager implements ItemListener {
 	}
 
 	public void itemStateChanged(ItemEvent evt) {
-		CardLayout cl = (CardLayout)(cards.getLayout());
-		cl.show(cards, (String)evt.getItem());
+		CardLayout cl = (CardLayout) (cards.getLayout());
+		cl.show(cards, (String) evt.getItem());
 	}
 
 	/**
-	 * Create the GUI and show it.  For thread safety,
-	 * this method should be invoked from the
-	 * event dispatch thread.
+	 * Create the GUI and show it. For thread safety, this method should be invoked
+	 * from the event dispatch thread.
 	 */
 	private static void createAndShowGUI() {
-		//Create and set up the window.
+		// Create and set up the window.
 		JFrame frame = new JFrame("CardLayoutDemo");
 		frame.setSize(750, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		//Create and set up the content pane.
+		// Create and set up the content pane.
 		GameLayoutManager demo = new GameLayoutManager();
 		demo.addComponentToPane(frame.getContentPane());
 
-		//Display the window.
-		//frame.pack();
+		// Display the window.
+		// frame.pack();
 
-		//LoginControl lc = new LoginControl(demo.LoginPanel, demo.client);
+		// LoginControl lc = new LoginControl(demo.LoginPanel, demo.client);
 
 		frame.setVisible(true);
 	}
@@ -399,7 +373,7 @@ public class GameLayoutManager implements ItemListener {
 	public static void main(String[] args) {
 		/* Use an appropriate Look and Feel */
 		try {
-			//UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 		} catch (UnsupportedLookAndFeelException ex) {
 			ex.printStackTrace();
@@ -413,8 +387,8 @@ public class GameLayoutManager implements ItemListener {
 		/* Turn off metal's use of bold fonts */
 		UIManager.put("swing.boldMetal", Boolean.FALSE);
 
-		//Schedule a job for the event dispatch thread:
-		//creating and showing this application's GUI.
+		// Schedule a job for the event dispatch thread:
+		// creating and showing this application's GUI.
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();
@@ -422,6 +396,4 @@ public class GameLayoutManager implements ItemListener {
 		});
 	}
 
-
 }
-

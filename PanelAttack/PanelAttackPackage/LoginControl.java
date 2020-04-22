@@ -11,10 +11,15 @@ public class LoginControl implements ActionListener {
 
 	private JPanel panel;
 	private GameClient client;
+	private JPanel cards;
 
 	public LoginControl(JPanel panel, GameClient client) {
 		this.panel = panel;
 		this.client = client;
+	}
+	
+	public void setCards(JPanel cards) {
+		this.cards = cards;
 	}
 
 	public void actionPerformed(ActionEvent ae) {
@@ -44,12 +49,12 @@ public class LoginControl implements ActionListener {
 	}
 
 	public void loginSuccess() {
-		// TODO Auto-generated method stub
-		
+		CardLayout cardLayout = (CardLayout)cards.getLayout();
+	    cardLayout.show(cards, "Main Menu");
 	}
 
 	public void loginFailure() {
-		// TODO Auto-generated method stub
+		System.out.println("Login failed (update gui if need be)...");
 		
 	}
 
