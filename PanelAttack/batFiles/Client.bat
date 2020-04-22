@@ -1,1 +1,1 @@
-java -cp .;ocsf.jar PanelAttackPackage.GameLayoutManager
+java -cp .;ocsf.jar PannelAttack.PanelAttackPackage.GameLayoutManager
