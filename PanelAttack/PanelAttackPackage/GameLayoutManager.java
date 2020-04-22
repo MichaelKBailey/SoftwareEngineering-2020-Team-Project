@@ -75,19 +75,6 @@ public class GameLayoutManager implements ItemListener {
 		cards.add(WelcomePanel, WELCOMEPANEL);
 		WelcomePanel.setLayout(null);
 
-		JLabel WelcomeLabelOne = new JLabel("Welcome To:");
-		WelcomeLabelOne.setHorizontalAlignment(SwingConstants.CENTER);
-		WelcomeLabelOne.setFont(new Font("Dialog", Font.PLAIN, 25));
-		WelcomeLabelOne.setBounds(296, 68, 163, 55);
-		WelcomePanel.add(WelcomeLabelOne);
-
-		JLabel WelcomeLabelTwo = new JLabel("PANEL ATTACK");
-		WelcomeLabelTwo.setHorizontalAlignment(SwingConstants.CENTER);
-		WelcomeLabelTwo.setForeground(Color.RED);
-		WelcomeLabelTwo.setFont(new Font("Dialog", Font.PLAIN, 44));
-		WelcomeLabelTwo.setBounds(198, 191, 359, 80);
-		WelcomePanel.add(WelcomeLabelTwo);
-
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() 
 		{
@@ -97,7 +84,7 @@ public class GameLayoutManager implements ItemListener {
 				cl.show(cards, LOGINPANEL);
 			}
 		});
-		btnLogin.setBounds(198, 318, 98, 26);
+		btnLogin.setBounds(457, 409, 98, 26);
 		WelcomePanel.add(btnLogin);
 
 		JButton btnRegister = new JButton("Register");
@@ -109,8 +96,15 @@ public class GameLayoutManager implements ItemListener {
 				cl.show(cards, REGISTERPANEL);
 			}
 		});
-		btnRegister.setBounds(459, 318, 98, 26);
+		btnRegister.setBounds(180, 409, 98, 26);
 		WelcomePanel.add(btnRegister);
+		
+				JLabel WelcomeLabelTwo = new JLabel("");
+				WelcomeLabelTwo.setIcon(new ImageIcon("C:\\Users\\Michael\\Desktop\\PARebuilt\\PanelAttack\\TitleTest.gif"));
+				WelcomeLabelTwo.setHorizontalAlignment(SwingConstants.CENTER);
+				//WelcomeLabelTwo.setFont(new Font("Dialog", Font.PLAIN, 44));
+				WelcomeLabelTwo.setBounds(52, 12, 649, 385);
+				WelcomePanel.add(WelcomeLabelTwo);
 		cards.add(LoginPanel, LOGINPANEL);
 		LoginPanel.setLayout(null);
 
@@ -385,7 +379,7 @@ public class GameLayoutManager implements ItemListener {
 	private static void createAndShowGUI() {
 		//Create and set up the window.
 		JFrame frame = new JFrame("CardLayoutDemo");
-		frame.setSize(750, 502);
+		frame.setSize(750, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		//Create and set up the content pane.
