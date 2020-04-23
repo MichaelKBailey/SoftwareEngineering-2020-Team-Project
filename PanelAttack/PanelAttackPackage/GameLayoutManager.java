@@ -12,6 +12,7 @@ public class GameLayoutManager implements ItemListener {
 	JPanel cards; // a panel that uses CardLayout
 	LoginControl lc;
 	RegisterControl rc;
+	GamePlayAreaControl gac;
 	final static String WELCOMEPANEL = "Welcome Screen";
 	final static String LOGINPANEL = "Login Panel";
 	final static String REGISTERPANEL = "Register Panel";
@@ -102,7 +103,12 @@ public class GameLayoutManager implements ItemListener {
 		lc = new LoginControl(LoginPanel, client);
 		lc.setCards(cards);
 		rc = new RegisterControl(RegisterPanel, client);
-
+		gac = new GamePlayAreaControl(playAreaPanel, playerOnePanel, playerTwoPanel, client);
+		
+		client.setLoginControl(lc);
+		client.setRegisterControl(rc);
+		client.setGamePlayAreaControl(gac);
+		
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUsername.setBounds(120, 73, 85, 16);

@@ -8,6 +8,7 @@ import ocsf.client.AbstractClient;
 public class GameClient extends AbstractClient  {
 	private int test = 0;
 	private GameLayoutManager gameLayout;
+	private GamePlayAreaControl gamePlayAreaControl;
 	private LoginControl loginControl;
 	private RegisterControl registerControl;
 	private GamePlayAreaControl gamePlayAreaControl;
@@ -55,14 +56,22 @@ public class GameClient extends AbstractClient  {
 		}
 
 		else if (object instanceof GameData) {
+<<<<<<< HEAD
 			gamePlayAreaControl.receiveUpdate((GameData)object);	//receiveUpdate calls its class's own setter
 			System.out.println("GameData Received");
+=======
+			System.out.println("Game Data Received");
+>>>>>>> branch 'master' of https://github.com/MichaelKBailey/SoftwareEngineering-2020-Team-Project.git
 		}
 
 	}
 
 	public void connectionEstablished() {
 		System.out.println("Connected");
+	}
+
+	public void setGamePlayAreaControl(GamePlayAreaControl gamePlayAreaControl) {
+		this.gamePlayAreaControl = gamePlayAreaControl;
 	}
 
 }
