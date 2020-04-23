@@ -5,8 +5,10 @@ import ocsf.server.AbstractServer;
 import ocsf.server.ConnectionToClient;
 
 public class GameServer extends AbstractServer {
+	public Game game;
 	private Database db;
 	private int num_connected;
+	private int num_ready;
 
 
 	public GameServer(int port, Database db) {
@@ -14,11 +16,25 @@ public class GameServer extends AbstractServer {
 		this.setTimeout(500);
 		this.db = db;
 		num_connected = 0;
+		num_ready = 0;
 	}
 
 	protected void handleMessageFromClient(Object object, ConnectionToClient connToClient) {
 		String result;
-		if (object instanceof LoginData) {
+		if (object instanceof String) {
+			String clientString = String.valueOf(object);
+			switch(clientString) {
+			case "ready":
+				num_ready++;
+				if (num_ready >= 2) {
+					game.gameStart();
+				}
+			default:
+				break;
+			}
+		}
+		
+		else if (object instanceof LoginData) {
 			// If we received LoginData, verify the account information.
 			if (object instanceof LoginData)
 			{
@@ -83,12 +99,17 @@ public class GameServer extends AbstractServer {
 	public void clientConnected(ConnectionToClient client) {
 		System.out.println("Client " + client.getId() + " connected\n");
 		num_connected++;
+		//////////////////////////
+		//Delete this after test:
+		game.gameStart();
+		/////////////////////////
 		if (num_connected >= 2)
 			this.stopListening();
 	}
 	
 	public void clientDisconnected() {
 		num_connected--;
+		num_ready--;
 		if (num_connected < 2) {	//I have no idea if this is right. Is this where to call listen? is that the right method to call? it blocks right here but i guess that's ok...
 			try
 			{

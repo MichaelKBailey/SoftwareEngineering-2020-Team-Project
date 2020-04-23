@@ -12,7 +12,7 @@ public class Game
 	public Game(int difficulty) {
 		setSpeed(15);
 		this.paused = true;
-		
+		this.gameData = new GameData();
 	}
 		
 	public void gameStart() {

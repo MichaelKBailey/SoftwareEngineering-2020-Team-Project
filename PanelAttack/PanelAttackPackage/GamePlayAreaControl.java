@@ -32,8 +32,11 @@ public class GamePlayAreaControl implements ActionListener {
 	}
 	
 	public void gameStart() {
+		System.out.println("game start method run");
+		this.playAreaPanel.setVisible(true);
 		this.playerOnePanel.setVisible(true);
 		this.playerTwoPanel.setVisible(true);
+		this.playAreaPanel.repaint();
 		drawBoard();
 	}
 	
@@ -41,7 +44,7 @@ public class GamePlayAreaControl implements ActionListener {
 		/*As it stands, the client redraws its screen only when it receives an update from the server.
 		 * However, rather than handleMessageFromServer calling drawBoard (below) directly, it calls this.
 		 */
-		setGameData(gameData);
+		this.setGameData(gameData);
 		this.drawBoard();
 	}
 	

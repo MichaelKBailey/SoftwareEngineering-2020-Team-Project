@@ -200,6 +200,16 @@ public class GameLayoutManager implements ItemListener {
 		MainMenuPanel.add(btnNewGame);
 
 		JButton btnFindMatch = new JButton("Find Match");
+		btnFindMatch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					client.sendToServer("ready");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				// What else would need to be done?
+			}
+		});
 		btnFindMatch.setBounds(81, 168, 98, 26);
 		MainMenuPanel.add(btnFindMatch);
 
@@ -274,7 +284,7 @@ public class GameLayoutManager implements ItemListener {
 		playerOnePanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
 		playerOnePanel.setBounds(30, 35, 194, 382); // If this changes, edit Game.java
 		playerOnePanel.setLayout(null);
-		playerOnePanel.setVisible(false);
+		playerOnePanel.setVisible(true);
 		GamePlayAreaPanel.add(playerOnePanel);
 		
 

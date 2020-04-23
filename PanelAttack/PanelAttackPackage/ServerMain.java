@@ -11,9 +11,8 @@ public class ServerMain
 {
 	private GameServer server;
 	private ScheduledExecutorService timer;	//Used for both updating the board position and the network frequency
-	private Game game;
 	private Database db;
-	
+	private Game game;
 	
 	/*ServerMain.java creates the:
 	1. network (GameServer.java)
@@ -32,6 +31,7 @@ public class ServerMain
 		}
 		
 		server = new GameServer(8300, db);
+		server.game = new Game(1);
 		try
 		{
 			server.listen();
@@ -46,7 +46,7 @@ public class ServerMain
 		timer = Executors.newSingleThreadScheduledExecutor();
 			timer.scheduleWithFixedDelay(new Runnable() {
 				@Override
-				public void run() { game.tick();	}
+				public void run() { game.tick(); server.sendToAllClients(game);	}
 			}, 0, 1, TimeUnit.MILLISECONDS);
 	}
 
