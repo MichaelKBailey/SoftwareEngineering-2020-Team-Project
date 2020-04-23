@@ -49,6 +49,7 @@ public class GameServer extends AbstractServer {
 
 		else if (object instanceof RegisterData) {
 			// Try to create the account.
+			System.out.println("Registration Data received");
 		      RegisterData data = (RegisterData)object;
 		      if (db.createNewAccount(data.getUsername(), data.getPassword()))
 		      {

@@ -1,6 +1,8 @@
 package PanelAttackPackage;
 
-public class RegisterData {
+import java.io.Serializable;
+
+public class RegisterData implements Serializable{
 	public String username;
 	public String password;
 	public String passwordVerify;

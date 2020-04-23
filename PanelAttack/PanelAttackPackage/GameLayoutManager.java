@@ -100,7 +100,6 @@ public class GameLayoutManager implements ItemListener {
 		LoginPanel = new JPanel();
 		LoginPanel.setLayout(null);
 		lc = new LoginControl(LoginPanel, client);
-		lc.setCards(cards);
 		client.setLoginControl(lc);
 		
 		JLabel lblUsername = new JLabel("Username:");
@@ -129,12 +128,7 @@ public class GameLayoutManager implements ItemListener {
 		LoginPanel.add(btnSubmit);
 		
 		JButton btnCancel = new JButton("Cancel");
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cl = (CardLayout) (cards.getLayout());
-				cl.show(cards, WELCOMEPANEL);
-			}
-		});
+		btnCancel.addActionListener(lc);
 		btnCancel.setBounds(400, 207, 98, 26);
 		LoginPanel.add(btnCancel);
 		
@@ -165,28 +159,27 @@ public class GameLayoutManager implements ItemListener {
 		RegisterConfirmPasswordTextField.setBounds(212, 131, 263, 20);
 		RegisterPanel.add(RegisterConfirmPasswordTextField);
 		RegisterConfirmPasswordTextField.setColumns(10);
-
+		rc.setRegisterConfirmPasswordTextField(RegisterConfirmPasswordTextField);
+		
 		RegisterPasswordTextField = new JTextField();
 		RegisterPasswordTextField.setColumns(10);
 		RegisterPasswordTextField.setBounds(212, 91, 263, 20);
 		RegisterPanel.add(RegisterPasswordTextField);
-
+		rc.setRegisterPasswordTextField(RegisterPasswordTextField);
+		
 		RegisterUsernameTextField = new JTextField();
 		RegisterUsernameTextField.setColumns(10);
 		RegisterUsernameTextField.setBounds(212, 46, 263, 20);
 		RegisterPanel.add(RegisterUsernameTextField);
+		rc.setRegisterUsernameTextField(RegisterUsernameTextField);
 
 		JButton btnRegisterSubmit = new JButton("Submit");
 		btnRegisterSubmit.setBounds(212, 188, 98, 26);
+		btnRegisterSubmit.addActionListener(rc);
 		RegisterPanel.add(btnRegisterSubmit);
 
 		JButton btnRegisterCancel_1 = new JButton("Cancel");
-		btnRegisterCancel_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CardLayout cl = (CardLayout) (cards.getLayout());
-				cl.show(cards, WELCOMEPANEL);
-			}
-		});
+		btnRegisterCancel_1.addActionListener(rc);
 		btnRegisterCancel_1.setBounds(377, 188, 98, 26);
 		RegisterPanel.add(btnRegisterCancel_1);
 		
@@ -364,7 +357,11 @@ public class GameLayoutManager implements ItemListener {
 		//Cards=======================================================
 		//Create panel to hold the cards:
 		cards = new JPanel(new CardLayout());
-
+		
+		//have to put these after cards for the updated pointer
+		lc.setCards(cards);
+		rc.setCards(cards);
+		
 		//Add all the cards to the main panel:
 		cards.add(WelcomePanel, WELCOMEPANEL);		
 		cards.add(LoginPanel, LOGINPANEL);

@@ -7,6 +7,7 @@ import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class LoginControl implements ActionListener {
 
 	private JPanel panel;
@@ -36,14 +37,16 @@ public class LoginControl implements ActionListener {
 			System.out.println("Submit");
 			JTextField fieldUsr = (JTextField) panel.getComponent(2);
 			JTextField fieldPass = (JTextField) panel.getComponent(3);
-
+			System.out.println(fieldPass.getText());
+			System.out.println(fieldUsr.getText());
+			
 			String username = fieldUsr.getText();
 			String password = fieldPass.getText();
 
 			LoginData data = new LoginData(username, password);
 
 			if (data.getUsername().equals("") || data.getPassword().equals("")) {
-				System.out.println("test successful");
+				System.out.println("Please leave no fields blank.");
 				return;
 			}
 			
@@ -52,16 +55,20 @@ public class LoginControl implements ActionListener {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}else if (command == "Cancel") {
+			CardLayout cardLayout = (CardLayout)cards.getLayout();
+		    cardLayout.show(cards, "Welcome Screen");
 		}
 	}
 
 	public void loginSuccess() {
-		CardLayout cardLayout = (CardLayout)cards.getLayout();
+		CardLayout cardLayout = (CardLayout) cards.getLayout();
 	    cardLayout.show(cards, "Main Menu");
 	}
 
 	public void loginFailure() {
-		System.out.println("Login failed (update gui if need be)...");
+		//if we want to change any graphics on failure it would be from here
+		System.out.println("Login failed.");
 		
 	}
 

@@ -128,11 +128,12 @@ public class Database
 	// Method for creating a new account.
 	  public boolean createNewAccount(String username, String password)
 	  {
+		  System.out.println("got to here");
 		  try 
 			{
 				//Create a statement
 				stmt = con.createStatement();
-				stmt.execute("INSERT INTO user VALUES ('" + username + "', AES_ENCRYPT('" + password +"', 'f4mZ9wXU0kt3AraO'));");
+				stmt.execute("INSERT INTO user VALUES ('" + username + "', AES_ENCRYPT('" + password +"', 'key'));");
 			}
 			catch (SQLException e)
 			{
