@@ -8,6 +8,7 @@ import ocsf.client.AbstractClient;
 public class GameClient extends AbstractClient  {
 	private int test = 0;
 	private GameLayoutManager gameLayout;
+	private GamePlayAreaControl gamePlayAreaControl;
 	private LoginControl loginControl;
 	private RegisterControl registerControl;
 	
@@ -47,14 +48,18 @@ public class GameClient extends AbstractClient  {
 			}
 		}
 
-		else if (object instanceof Board) {
-			System.out.println("Board Data Received");
+		else if (object instanceof GameData) {
+			System.out.println("Game Data Received");
 		}
 
 	}
 
 	public void connectionEstablished() {
 		System.out.println("Connected");
+	}
+
+	public void setGamePlayAreaControl(GamePlayAreaControl gamePlayAreaControl) {
+		this.gamePlayAreaControl = gamePlayAreaControl;
 	}
 
 }
