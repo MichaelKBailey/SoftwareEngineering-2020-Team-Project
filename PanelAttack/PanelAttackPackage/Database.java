@@ -99,7 +99,7 @@ public class Database
 			stmt = con.createStatement();
 
 			//Execute a query
-			rs = stmt.executeQuery("select *, aes_decrypt(Password,'" + key + "') from user where username = '"+ username + "';");
+			rs = stmt.executeQuery("select *, aes_decrypt(Password,'" + key + "') from GameUsers where username = '"+ username + "';");
 
 			//If the result set is empty, return null. Else, proceed to read into the array list
 			//Use do while so not to lose the 1st line of the file
@@ -134,7 +134,7 @@ public class Database
 			{
 				//Create a statement
 				stmt = con.createStatement();
-				stmt.execute("INSERT INTO user VALUES ('" + username + "', AES_ENCRYPT('" + password +"', 'key'));");
+				stmt.execute("INSERT INTO GameUsers VALUES ('" + username + "', AES_ENCRYPT('" + password +"', 'key'));");
 			}
 			catch (SQLException e)
 			{
