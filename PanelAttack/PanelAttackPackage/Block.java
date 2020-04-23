@@ -31,6 +31,7 @@ public class Block extends JButton
 		super();
 		this.setPreferredSize(new Dimension(30, 30));
 		this.setBounds(x,y,30,30);
+		this.setVisible(true);
 	}
 
 	

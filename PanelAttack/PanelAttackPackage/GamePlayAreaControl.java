@@ -29,6 +29,8 @@ public class GamePlayAreaControl implements ActionListener {
 		this.playerTwoPanel = playerTwoPanel;
 		this.scoreBoardPanel = scoreBoardPanel;
 		this.client = client;
+		gameData = new GameData();
+		this.drawBoard();
 	}
 	
 	public void gameStart() {
