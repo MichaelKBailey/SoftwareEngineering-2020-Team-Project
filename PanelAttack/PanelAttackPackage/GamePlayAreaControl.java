@@ -35,6 +35,7 @@ public class GamePlayAreaControl implements ActionListener {
 	public void drawBoard(Board b) {
 		////////////////////////////////
 		//SHOULD THIS
+		cards.remo
 		////////////////////////////////
 	}
 }
