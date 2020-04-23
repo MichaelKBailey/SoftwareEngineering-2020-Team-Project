@@ -3,7 +3,7 @@ package PanelAttackPackage;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-
+import java.util.*;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
@@ -34,22 +34,43 @@ public class GameLayoutManager implements ItemListener {
 	private String address;
 	private int port;
 	
+	public void setAddressAndPort() throws IOException
+	{
+		//Read properties file
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("address.properties");
+		prop.load(fis);
+		//address = "localhost";
+		//port = 8300;
+		address = prop.getProperty("address");  
+		port = Integer.parseInt(prop.getProperty("port"));
+	}
 	
-	public GameLayoutManager(String address, int port) {
-		this.address = address;
-		this.port = port;
+	public GameLayoutManager() {
 	}
 	
 	
 	public void addComponentToPane(Container pane) {
 		// Set up the chat client.
+		try {
+			setAddressAndPort();
+		} catch (IOException e) {
+			System.out.println("Couldn't read address file.");
+		}
 		client = new GameClient(address, port);
-
+		
 		try {
 			client.openConnection();
 		} catch (IOException e) {
-			System.out.println("The client couldn't connect on start.");
+			System.out.println("The client couldn't connect on start. Will try localhost instead.");
+			try {
+				client = new GameClient("localhost", port);
+				client.openConnection();
+			} catch (IOException e2) {
+				System.out.println("The client couldn't connect to localhost.");
+			}
 		}
+		
 
 		// Put the JComboBox in a JPanel to get a nicer look.
 		JPanel comboBoxPane = new JPanel(); // use FlowLayout
@@ -400,14 +421,14 @@ public class GameLayoutManager implements ItemListener {
 	
 	//Create the GUI and show it.
 	//For thread safety, this method should be invoked from the event dispatch thread.
-	private static void createAndShowGUI(String address, int port) {
+	private static void createAndShowGUI() {
 		// Create and set up the window.
 		JFrame frame = new JFrame("CardLayoutDemo");
 		frame.setSize(750, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Create and set up the content pane.
-		GameLayoutManager demo = new GameLayoutManager(address, port);
+		GameLayoutManager demo = new GameLayoutManager();
 		demo.addComponentToPane(frame.getContentPane());
 
 		// Display the window.
@@ -419,12 +440,7 @@ public class GameLayoutManager implements ItemListener {
 	}
 	
 
-	public static void main(String[] args) {
-		if (args.length != 2) {
-			System.out.println("Fail. Please give Address and Port# as command line arguments.");
-			return;
-		}
-		
+	public static void main(String[] args) {		
 		/* Use an appropriate Look and Feel */
 		try {
 			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -445,7 +461,7 @@ public class GameLayoutManager implements ItemListener {
 		// creating and showing this application's GUI.
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				createAndShowGUI(args[0], Integer.parseInt(args[1]));
+				createAndShowGUI();
 			}
 		});
 	}
