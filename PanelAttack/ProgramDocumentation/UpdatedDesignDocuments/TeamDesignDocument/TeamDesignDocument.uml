@@ -1416,6 +1416,17 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_BVNr0Gg1EeqQA9LpF9Phjw" name="&lt;imports>" client="_6UfbEGg0EeqQA9LpF9Phjw" supplier="_8T8xYGg0EeqQA9LpF9Phjw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_8T8xYGg0EeqQA9LpF9Phjw" name="Java.Swing"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_awfvoIUOEeqiaqWECzHBBQ" name="Database">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hUxU8IUOEeqiaqWECzHBBQ" name="con"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8BJ4AIUOEeqiaqWECzHBBQ" name="stmt"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9OrbEIUOEeqiaqWECzHBBQ" name="rs"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BJLhwIUPEeqiaqWECzHBBQ" name="key"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_C-KtcIUPEeqiaqWECzHBBQ" name="Database"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_L89NYIUPEeqiaqWECzHBBQ" name="query"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_OIFBIIUPEeqiaqWECzHBBQ" name="executeDML"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_P_mjcIUPEeqiaqWECzHBBQ" name="verifyAccount"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Rfu5cIUPEeqiaqWECzHBBQ" name="createNewAccount"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_EFrh8GgtEeqQA9LpF9Phjw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EFvMUGgtEeqQA9LpF9Phjw" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
