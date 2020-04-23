@@ -13,16 +13,18 @@ public class GamePlayAreaControl implements ActionListener {
 	private JPanel cards;
 	private JPanel playerOnePanel;
 	private JPanel playerTwoPanel;
+	private JPanel scoreBoardPanel;
 	private GameData gameData;
 	
-	public GamePlayAreaControl() {
-		
+	public GamePlayAreaControl(GameClient client) {
+		this.client = client;
 	}
 	
-	public GamePlayAreaControl(JPanel playAreaPanel, JPanel playerOnePanel, JPanel playerTwoPanel, GameClient client) {
+	public GamePlayAreaControl(JPanel playAreaPanel, JPanel playerOnePanel, JPanel playerTwoPanel, JPanel scoreBoardPanel, GameClient client) {
 		this.playAreaPanel = playAreaPanel;
 		this.playerOnePanel = playerOnePanel;
 		this.playerTwoPanel = playerTwoPanel;
+		this.scoreBoardPanel = scoreBoardPanel;
 		this.client = client;
 	}
 	
@@ -68,10 +70,11 @@ public class GamePlayAreaControl implements ActionListener {
 		this.gameData = gameData;
 	}
 	
-	public void setPanels(JPanel playAreaPanel, JPanel playerOnePanel, JPanel playerTwoPanel) {
+	public void setPanels(JPanel playAreaPanel, JPanel playerOnePanel, JPanel playerTwoPanel, JPanel scoreBoardPanel) {
 		this.playAreaPanel = playAreaPanel;
 		this.playerOnePanel = playerOnePanel;
 		this.playerTwoPanel = playerTwoPanel;
+		this.scoreBoardPanel = scoreBoardPanel;
 	}
 	
 	public GameData getGameData() {
