@@ -4,7 +4,7 @@ import javax.swing.JButton;
 import java.awt.*;
 
 
-public class ButtonBlocks extends JButton 
+public class Block extends JButton 
 {
 	/**
 	 * 
@@ -21,8 +21,13 @@ public class ButtonBlocks extends JButton
 	private Color color;
 	private boolean trash;
 
-	public ButtonBlocks(int x, int y)
-	{
+	
+	
+	public Block() {
+		
+	}
+	
+	public Block(int x, int y) {
 		super();
 		this.setPreferredSize(new Dimension(30, 30));
 		this.setBounds(x,y,30,30);

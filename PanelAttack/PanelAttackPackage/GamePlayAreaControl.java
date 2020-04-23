@@ -32,10 +32,10 @@ public class GamePlayAreaControl implements ActionListener {
 		String command = ae.getActionCommand();
 	}
 
-	public void drawBoard(Board b) {
+	public void drawBoard(GameData b) {
 		////////////////////////////////
 		//SHOULD THIS
-		cards.remo
+		//cards.remo
 		////////////////////////////////
 	}
 }

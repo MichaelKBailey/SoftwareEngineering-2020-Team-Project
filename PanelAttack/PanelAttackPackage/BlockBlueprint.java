@@ -8,23 +8,23 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class GameData 
+public class BlockBlueprint 
 {
-	public GameData()
+	public BlockBlueprint()
 	{
 		
-		ArrayList <ButtonBlocks> someName = new ArrayList<ButtonBlocks> ();
+		ArrayList <Block> someName = new ArrayList<Block> ();
 
-		JButton REDButtonBlock = new ButtonBlocks();
-		REDButtonBlock.setBounds(((ButtonBlocks) REDButtonBlock).getInitialX(),((ButtonBlocks) REDButtonBlock).getInitialY(), ((ButtonBlocks) REDButtonBlock).getBlockWidth(), ((ButtonBlocks) REDButtonBlock).getBlockHeight());
+		JButton REDButtonBlock = new Block();
+		REDButtonBlock.setBounds(((Block) REDButtonBlock).getInitialX(),((Block) REDButtonBlock).getInitialY(), ((Block) REDButtonBlock).getBlockWidth(), ((Block) REDButtonBlock).getBlockHeight());
 		REDButtonBlock.setEnabled(false);
 		REDButtonBlock.setVisible(true);
 		REDButtonBlock.setText(" ");
 		REDButtonBlock.setBackground(Color.RED);
-		someName.add((ButtonBlocks) REDButtonBlock);
+		someName.add((Block) REDButtonBlock);
 		
 		
-		ButtonBlocks BLACKButtonBlock = new ButtonBlocks();
+		Block BLACKButtonBlock = new Block();
 		BLACKButtonBlock.setBounds(BLACKButtonBlock.getInitialX(),BLACKButtonBlock.getInitialY(), BLACKButtonBlock.getBlockWidth(), BLACKButtonBlock.getBlockHeight());
 		BLACKButtonBlock.setEnabled(false);
 		BLACKButtonBlock.setVisible(true);
@@ -33,7 +33,7 @@ public class GameData
 		someName.add(BLACKButtonBlock);
 		
 		
-		ButtonBlocks BLUEButtonBlock = new ButtonBlocks();
+		Block BLUEButtonBlock = new Block();
 		BLUEButtonBlock.setBounds(BLUEButtonBlock.getInitialX(),BLUEButtonBlock.getInitialY(), BLUEButtonBlock.getBlockWidth(), BLUEButtonBlock.getBlockHeight());
 		BLUEButtonBlock.setEnabled(false);
 		BLUEButtonBlock.setVisible(true);
@@ -42,7 +42,7 @@ public class GameData
 		someName.add(BLUEButtonBlock);
 		
 		
-		ButtonBlocks CYANButtonBlock = new ButtonBlocks();
+		Block CYANButtonBlock = new Block();
 		CYANButtonBlock.setBounds(CYANButtonBlock.getInitialX(),CYANButtonBlock.getInitialY(), CYANButtonBlock.getBlockWidth(), CYANButtonBlock.getBlockHeight());
 		CYANButtonBlock.setEnabled(false);
 		CYANButtonBlock.setVisible(true);
@@ -51,7 +51,7 @@ public class GameData
 		someName.add(CYANButtonBlock);
 		
 		
-		ButtonBlocks GREENButtonBlock = new ButtonBlocks();
+		Block GREENButtonBlock = new Block();
 		GREENButtonBlock.setBounds(GREENButtonBlock.getInitialX(),GREENButtonBlock.getInitialY(), GREENButtonBlock.getBlockWidth(), GREENButtonBlock.getBlockHeight());
 		GREENButtonBlock.setEnabled(false);
 		GREENButtonBlock.setVisible(true);
@@ -60,7 +60,7 @@ public class GameData
 		someName.add(GREENButtonBlock);
 		
 		
-		ButtonBlocks ORANGEButtonBlock = new ButtonBlocks();
+		Block ORANGEButtonBlock = new Block();
 		ORANGEButtonBlock.setBounds(ORANGEButtonBlock.getInitialX(),ORANGEButtonBlock.getInitialY(), ORANGEButtonBlock.getBlockWidth(), ORANGEButtonBlock.getBlockHeight());
 		ORANGEButtonBlock.setEnabled(false);
 		ORANGEButtonBlock.setVisible(true);
@@ -69,7 +69,7 @@ public class GameData
 		someName.add(ORANGEButtonBlock);
 		
 		
-		ButtonBlocks PINKButtonBlock = new ButtonBlocks();
+		Block PINKButtonBlock = new Block();
 		PINKButtonBlock.setBounds(PINKButtonBlock.getInitialX(),PINKButtonBlock.getInitialY(), PINKButtonBlock.getBlockWidth(), PINKButtonBlock.getBlockHeight());
 		PINKButtonBlock.setEnabled(false);
 		PINKButtonBlock.setVisible(true);
@@ -78,7 +78,7 @@ public class GameData
 		someName.add(PINKButtonBlock);
 		
 		
-		ButtonBlocks MAGENTAButtonBlock = new ButtonBlocks();
+		Block MAGENTAButtonBlock = new Block();
 		MAGENTAButtonBlock.setBounds(MAGENTAButtonBlock.getInitialX(),MAGENTAButtonBlock.getInitialY(), MAGENTAButtonBlock.getBlockWidth(), MAGENTAButtonBlock.getBlockHeight());
 		MAGENTAButtonBlock.setEnabled(false);
 		MAGENTAButtonBlock.setVisible(true);

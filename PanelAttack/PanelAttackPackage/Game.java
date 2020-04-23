@@ -5,14 +5,14 @@ public class Game
 {	private int speed; 		//Number of milliseconds per grid advance
 	private int ticknum;	//Number of milliseconds per speed up
 	private boolean paused;	//True if game hasnt started
-	private Board board1;	//Game data for player 1
-	private Board board2;	//Game data for player 2
+	private GameData gameData1;	//Game data for player 1
+	private GameData gameData2;	//Game data for player 2
 	public int difficulty;	//1,2,3 = easy, med, hard
 	
 	public Game(int difficulty) {
 		
-		this.board1 = new Board(30, 35, 194, 382);	//These are from GameLayoutManager player areas.
-		this.board2 = new Board(477, 35, 194, 382);
+		this.gameData1 = new GameData(30, 35, 194, 382);	//These are from GameLayoutManager player areas.
+		this.gameData2 = new GameData(477, 35, 194, 382);
 		setSpeed(15);
 		this.paused = true;
 	}
@@ -25,8 +25,8 @@ public class Game
 		if (this.ticknum == 15000) {
 			
 		}
-			board1.advanceGrid();
-			board2.advanceGrid();
+			gameData1.advanceGrid();
+			gameData2.advanceGrid();
 	}
 	
 	public void processMove() {
@@ -55,19 +55,19 @@ public class Game
 		return this.speed;
 	}
 	
-	public void setBoard1(Board board) {
-		this.board1 = board;
+	public void setgameData1(GameData gameData) {
+		this.gameData1 = gameData;
 	}
 	
-	public Board getBoard1() {
-		return this.board1;
+	public GameData getgameData1() {
+		return this.gameData1;
 	}
 	
-	public void setBoard2(Board board) {
-		this.board2 = board;
+	public void setgameData2(GameData gameData) {
+		this.gameData2 = gameData;
 	}
 	
-	public Board getBoard2() {
-		return this.board2;
+	public GameData getgameData2() {
+		return this.gameData2;
 	}
 }
