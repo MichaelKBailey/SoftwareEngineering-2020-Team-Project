@@ -19,3 +19,17 @@
 /GameData.class
 /BoardData.class
 /GameLayoutManager$13.class
+/Game.class
+/GameClient.class
+/GameLayoutManager$1.class
+/GameLayoutManager.class
+/GamePlayAreaControl.class
+/GameServer.class
+/LoginControl.class
+/LoginData.class
+/MoveData.class
+/RegisterControl.class
+/RegisterData.class
+/UserData.class
+/WelcomeControl.class
+/WelcomeData.class

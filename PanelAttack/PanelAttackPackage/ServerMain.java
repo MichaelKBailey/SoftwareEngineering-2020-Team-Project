@@ -46,7 +46,7 @@ public class ServerMain
 		timer = Executors.newSingleThreadScheduledExecutor();
 			timer.scheduleWithFixedDelay(new Runnable() {
 				@Override
-				public void run() { game.tick(); server.sendToAllClients(game);	}
+				public void run() { game.tick(); server.sendToAllClients(game.gameData);	}
 			}, 0, 1, TimeUnit.MILLISECONDS);
 	}
 
