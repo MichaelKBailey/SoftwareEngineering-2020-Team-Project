@@ -320,7 +320,7 @@ public class GameLayoutManager implements ItemListener {
 		playerTwoPanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
 		playerTwoPanel.setBounds(477, 35, 194, 382); // If this changes, edit Game.java
 		playerTwoPanel.setLayout(null);
-		playerTwoPanel.setVisible(false);
+		playerTwoPanel.setVisible(true);
 		GamePlayAreaPanel.add(playerTwoPanel);
 
 		scoreBoardPanel = new JPanel() {
@@ -336,6 +336,8 @@ public class GameLayoutManager implements ItemListener {
 		scoreBoardPanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
 		scoreBoardPanel.setBounds(256, 101, 191, 240);
 		scoreBoardPanel.setLayout(null);
+		scoreBoardPanel.setVisible(true);
+		GamePlayAreaPanel.add(scoreBoardPanel);
 
 		JLabel backgroundLabel = new JLabel("");
 		backgroundLabel.setHorizontalAlignment(SwingConstants.CENTER);
