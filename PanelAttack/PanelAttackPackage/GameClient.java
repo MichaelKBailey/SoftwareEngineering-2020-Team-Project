@@ -1,4 +1,4 @@
-// Game Client class
+/// Game Client class
 // Adding logging in communication - Regan
 
 package PanelAttackPackage;
