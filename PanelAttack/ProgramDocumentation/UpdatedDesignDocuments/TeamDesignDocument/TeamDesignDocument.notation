@@ -29,21 +29,21 @@
           <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_EQqp8GgtEeqQA9LpF9Phjw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_gVLdkWgtEeqQA9LpF9Phjw"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_gVMEoGgtEeqQA9LpF9Phjw" type="Operation_ClassOperationLabel">
-          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_ERGHwGgtEeqQA9LpF9Phjw"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_gVMEoWgtEeqQA9LpF9Phjw"/>
-        </children>
-        <children xmi:type="notation:Shape" xmi:id="_gVMEomgtEeqQA9LpF9Phjw" type="Operation_ClassOperationLabel">
-          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_ERRt8GgtEeqQA9LpF9Phjw"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_gVMEo2gtEeqQA9LpF9Phjw"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_gVMrsGgtEeqQA9LpF9Phjw" type="Operation_ClassOperationLabel">
           <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_ERdUIGgtEeqQA9LpF9Phjw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_gVMrsWgtEeqQA9LpF9Phjw"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_gVMrsmgtEeqQA9LpF9Phjw" type="Operation_ClassOperationLabel">
-          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_ERtLwGgtEeqQA9LpF9Phjw"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_gVMrs2gtEeqQA9LpF9Phjw"/>
+        <children xmi:type="notation:Shape" xmi:id="_6uC5EIUIEeqiaqWECzHBBQ" type="Operation_ClassOperationLabel">
+          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_6pvn4IUIEeqiaqWECzHBBQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_6uC5EYUIEeqiaqWECzHBBQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_DMivYIUJEeqiaqWECzHBBQ" type="Operation_ClassOperationLabel">
+          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_DHsroIUJEeqiaqWECzHBBQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_DMivYYUJEeqiaqWECzHBBQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_cBaXMIUJEeqiaqWECzHBBQ" type="Operation_ClassOperationLabel">
+          <element xmi:type="uml:Operation" href="TeamDesignDocument.uml#_b9sU0IUJEeqiaqWECzHBBQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_cBaXMYUJEeqiaqWECzHBBQ"/>
         </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_EtCc5mgtEeqQA9LpF9Phjw"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_EtCc52gtEeqQA9LpF9Phjw"/>

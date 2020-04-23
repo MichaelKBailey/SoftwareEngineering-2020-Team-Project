@@ -23,13 +23,13 @@
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERM1cGgtEeqQA9LpF9Phjw" name="isGarbage" specification="_ERGHwGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERM1cGgtEeqQA9LpF9Phjw" name="isGarbage">
             <language>JAVA</language>
             <body>&#xD;
     return isGarbage;&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERX0kGgtEeqQA9LpF9Phjw" name="setGarbage" specification="_ERRt8GgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERX0kGgtEeqQA9LpF9Phjw" name="setGarbage">
             <language>JAVA</language>
             <body>&#xD;
     this.isGarbage = isGarbage;&#xD;
@@ -41,7 +41,7 @@
     return isActive;&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ER0ggGgtEeqQA9LpF9Phjw" name="setActive" specification="_ERtLwGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ER0ggGgtEeqQA9LpF9Phjw" name="setActive">
             <language>JAVA</language>
             <body>&#xD;
     this.isActive = isActive;&#xD;
@@ -56,26 +56,14 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERGHwGgtEeqQA9LpF9Phjw" name="isGarbage" visibility="public" method="_ERM1cGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERKZMGgtEeqQA9LpF9Phjw" direction="return">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERRt8GgtEeqQA9LpF9Phjw" name="setGarbage" visibility="public" method="_ERX0kGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERUxQGgtEeqQA9LpF9Phjw" name="isGarbage">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERdUIGgtEeqQA9LpF9Phjw" name="isActive" visibility="public" method="_ERnFIGgtEeqQA9LpF9Phjw">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERdUIGgtEeqQA9LpF9Phjw" name="getCurrentState" visibility="public" method="_ERnFIGgtEeqQA9LpF9Phjw">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERko4GgtEeqQA9LpF9Phjw" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERtLwGgtEeqQA9LpF9Phjw" name="setActive" visibility="public" method="_ER0ggGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERwPEGgtEeqQA9LpF9Phjw" name="isActive">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_6pvn4IUIEeqiaqWECzHBBQ" name="getColorMatch"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_DHsroIUJEeqiaqWECzHBBQ" name="getTrash"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_b9sU0IUJEeqiaqWECzHBBQ" name="getColor"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ESAtwGgtEeqQA9LpF9Phjw" name="BoardController" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_ES43gGgtEeqQA9LpF9Phjw" name="thisBoard" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
