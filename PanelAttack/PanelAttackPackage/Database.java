@@ -128,7 +128,6 @@ public class Database
 	// Method for creating a new account.
 	  public boolean createNewAccount(String username, String password)
 	  {
-		  System.out.println("got to here");
 		  try 
 			{
 				//Create a statement

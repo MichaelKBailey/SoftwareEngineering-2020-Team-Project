@@ -42,17 +42,8 @@ public class RegisterControl implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		String command = arg0.getActionCommand();
+		
 		if (command == "Submit") {
-			/*
-			System.out.println("Submit");
-			JTextField fieldUsr = (JTextField) container.getComponent(5);
-			System.out.println("ye1");
-			JTextField fieldPass = (JTextField) container.getComponent(4);
-			System.out.println("ye2");
-			JTextField fieldPassVer = (JTextField) container.getComponent(3);
-			System.out.println("ye3");
-			 */
-
 			String username = RegisterUsernameTextField.getText();
 			String password = RegisterPasswordTextField.getText();
 			String passwordVer = RegisterConfirmPasswordTextField.getText();

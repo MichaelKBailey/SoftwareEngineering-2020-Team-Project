@@ -35,7 +35,6 @@ public class LoginControl implements ActionListener {
 				System.out.println("The client couldn't connect before login submit.");
 			}
 			
-			System.out.println("Submit");
 			JTextField fieldUsr = (JTextField) panel.getComponent(2);
 			JTextField fieldPass = (JTextField) panel.getComponent(3);
 			System.out.println(fieldPass.getText());
