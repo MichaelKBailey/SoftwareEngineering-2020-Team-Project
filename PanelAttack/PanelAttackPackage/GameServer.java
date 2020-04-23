@@ -98,6 +98,10 @@ public class GameServer extends AbstractServer {
 	public void clientConnected(ConnectionToClient client) {
 		System.out.println("Client " + client.getId() + " connected\n");
 		num_connected++;
+		//////////////////////////
+		//Delete this after test:
+		game.gameStart();
+		/////////////////////////
 		if (num_connected >= 2)
 			this.stopListening();
 	}

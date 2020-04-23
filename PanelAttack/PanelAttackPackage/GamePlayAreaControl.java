@@ -32,8 +32,11 @@ public class GamePlayAreaControl implements ActionListener {
 	}
 	
 	public void gameStart() {
+		System.out.println("game start method run");
+		this.playAreaPanel.setVisible(true);
 		this.playerOnePanel.setVisible(true);
 		this.playerTwoPanel.setVisible(true);
+		this.playAreaPanel.repaint();
 		drawBoard();
 	}
 	

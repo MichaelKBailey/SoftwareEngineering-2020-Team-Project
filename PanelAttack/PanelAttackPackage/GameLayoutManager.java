@@ -281,7 +281,7 @@ public class GameLayoutManager implements ItemListener {
 		playerOnePanel.setBackground(new Color(10, 10, 10, 20)); // This gives us 20% opacity for the panel
 		playerOnePanel.setBounds(30, 35, 194, 382); // If this changes, edit Game.java
 		playerOnePanel.setLayout(null);
-		playerOnePanel.setVisible(false);
+		playerOnePanel.setVisible(true);
 		GamePlayAreaPanel.add(playerOnePanel);
 		
 
