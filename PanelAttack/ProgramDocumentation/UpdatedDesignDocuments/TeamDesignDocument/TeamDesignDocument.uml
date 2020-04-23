@@ -7,12 +7,16 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_EC6h0GgtEeqQA9LpF9Phjw" name="org.eclipse.papyrus.javagen.TeamDesignDocumentClassDesign">
       <packagedElement xmi:type="uml:Package" xmi:id="_EIm6IGgtEeqQA9LpF9Phjw" name="TeamDesignDocumentClassDesign">
         <packagedElement xmi:type="uml:Class" xmi:id="_EItn0GgtEeqQA9LpF9Phjw" name="Block" visibility="public">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_EJJFoGgtEeqQA9LpF9Phjw" name="isActive" visibility="private" isUnique="false">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-          </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_EJTdsGgtEeqQA9LpF9Phjw" name="isGarbage" visibility="private" isUnique="false">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_jfNwEIUKEeqiaqWECzHBBQ" name="color"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_oYvDwIUKEeqiaqWECzHBBQ" name="colorMatch"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_qrDrsIUKEeqiaqWECzHBBQ" name="initialX"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_tpAqkIUKEeqiaqWECzHBBQ" name="currentX"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_u-sEEIUKEeqiaqWECzHBBQ" name="initialY"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_wLrboIUKEeqiaqWECzHBBQ" name="currentY"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yKkxQIUKEeqiaqWECzHBBQ" name="blockWidth"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zTaooIUKEeqiaqWECzHBBQ" name="blockHeight"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_9LgIEIUKEeqiaqWECzHBBQ" name="trash"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_-0NyUIUKEeqiaqWECzHBBQ" name="currentState"/>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EQiuIGgtEeqQA9LpF9Phjw" name="Block" specification="_EJjVUGgtEeqQA9LpF9Phjw">
             <language>JAVA</language>
             <body>&#xD;
@@ -23,13 +27,13 @@
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERM1cGgtEeqQA9LpF9Phjw" name="isGarbage" specification="_ERGHwGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERM1cGgtEeqQA9LpF9Phjw" name="isGarbage">
             <language>JAVA</language>
             <body>&#xD;
     return isGarbage;&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERX0kGgtEeqQA9LpF9Phjw" name="setGarbage" specification="_ERRt8GgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ERX0kGgtEeqQA9LpF9Phjw" name="setGarbage">
             <language>JAVA</language>
             <body>&#xD;
     this.isGarbage = isGarbage;&#xD;
@@ -41,7 +45,7 @@
     return isActive;&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ER0ggGgtEeqQA9LpF9Phjw" name="setActive" specification="_ERtLwGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ER0ggGgtEeqQA9LpF9Phjw" name="setActive">
             <language>JAVA</language>
             <body>&#xD;
     this.isActive = isActive;&#xD;
@@ -56,26 +60,20 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERGHwGgtEeqQA9LpF9Phjw" name="isGarbage" visibility="public" method="_ERM1cGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERKZMGgtEeqQA9LpF9Phjw" direction="return">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERRt8GgtEeqQA9LpF9Phjw" name="setGarbage" visibility="public" method="_ERX0kGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERUxQGgtEeqQA9LpF9Phjw" name="isGarbage">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERdUIGgtEeqQA9LpF9Phjw" name="isActive" visibility="public" method="_ERnFIGgtEeqQA9LpF9Phjw">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERdUIGgtEeqQA9LpF9Phjw" name="getCurrentState" visibility="public" method="_ERnFIGgtEeqQA9LpF9Phjw">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERko4GgtEeqQA9LpF9Phjw" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
             </ownedParameter>
           </ownedOperation>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_ERtLwGgtEeqQA9LpF9Phjw" name="setActive" visibility="public" method="_ER0ggGgtEeqQA9LpF9Phjw">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_ERwPEGgtEeqQA9LpF9Phjw" name="isActive">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
-            </ownedParameter>
-          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_6pvn4IUIEeqiaqWECzHBBQ" name="getColorMatch"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_DHsroIUJEeqiaqWECzHBBQ" name="getTrash"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_b9sU0IUJEeqiaqWECzHBBQ" name="getColor"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_H677sIUKEeqiaqWECzHBBQ" name="getBlockHeight"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Jes0gIUKEeqiaqWECzHBBQ" name="getBlockWidth"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_KxyNAIUKEeqiaqWECzHBBQ" name="getInitialY"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_NBT_oIUKEeqiaqWECzHBBQ" name="getCurrentY"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_OYem4IUKEeqiaqWECzHBBQ" name="getInitialX"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_P2dAwIUKEeqiaqWECzHBBQ" name="getCurrentX"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ESAtwGgtEeqQA9LpF9Phjw" name="BoardController" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_ES43gGgtEeqQA9LpF9Phjw" name="thisBoard" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
@@ -127,21 +125,21 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_EUD8MGgtEeqQA9LpF9Phjw" name="thisBoardsPanel" type="_ES--IGgtEeqQA9LpF9Phjw"/>
           </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_ES3CUGgtEeqQA9LpF9Phjw" name="BoardData" visibility="public">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_EUPiYGgtEeqQA9LpF9Phjw" name="blocks" visibility="private" type="_EItn0GgtEeqQA9LpF9Phjw" isUnique="false">
-            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EUUa4GgtEeqQA9LpF9Phjw"/>
-            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EUXeMGgtEeqQA9LpF9Phjw" value="*"/>
-            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_EUahgGgtEeqQA9LpF9Phjw" name="defaultValue">
-              <language>JAVA</language>
-              <body>new ArrayList&lt;Block>()</body>
-            </defaultValue>
-          </ownedAttribute>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EUpyEGgtEeqQA9LpF9Phjw" name="BoardData" specification="_EUey8GgtEeqQA9LpF9Phjw">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ES3CUGgtEeqQA9LpF9Phjw" name="BlockBlueprint" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNsr4IUMEeqiaqWECzHBBQ" name="REDBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QDUtMIUMEeqiaqWECzHBBQ" name="BLACKBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Rj0PkIUMEeqiaqWECzHBBQ" name="BLUEBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TiNO4IUMEeqiaqWECzHBBQ" name="CYANBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_UvqggIUMEeqiaqWECzHBBQ" name="GREENBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_WDA-wIUMEeqiaqWECzHBBQ" name="ORANGEBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_XwqzYIUMEeqiaqWECzHBBQ" name="PINKBlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Z3YBMIUMEeqiaqWECzHBBQ" name="MAGENTABlock"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_uEaiQIUMEeqiaqWECzHBBQ" name="someName" type="_EXgRwGgtEeqQA9LpF9Phjw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EUpyEGgtEeqQA9LpF9Phjw" name="BoardData">
             <language>JAVA</language>
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_EUey8GgtEeqQA9LpF9Phjw" name="BoardData" visibility="private" method="_EUpyEGgtEeqQA9LpF9Phjw"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_ES--IGgtEeqQA9LpF9Phjw" name="BoardPanel" visibility="public">
           <generalization xmi:type="uml:Generalization" xmi:id="_EU_wUGgtEeqQA9LpF9Phjw" general="_EUxG0GgtEeqQA9LpF9Phjw"/>
@@ -616,33 +614,37 @@
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_EXgRwGgtEeqQA9LpF9Phjw" name="ArrayList"/>
-        <packagedElement xmi:type="uml:Class" xmi:id="_EZvGYGgtEeqQA9LpF9Phjw" name="Game" visibility="public">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_EZzX0GgtEeqQA9LpF9Phjw" name="p1Board" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_EZ3pQGgtEeqQA9LpF9Phjw" name="p2Board" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaCoYGgtEeqQA9LpF9Phjw" name="Game" specification="_EZ6skGgtEeqQA9LpF9Phjw">
+        <packagedElement xmi:type="uml:Class" xmi:id="_EZvGYGgtEeqQA9LpF9Phjw" name="GameData" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_EZzX0GgtEeqQA9LpF9Phjw" name="PlayerOneGrid" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_EZ3pQGgtEeqQA9LpF9Phjw" name="PlayerTwoGrid" visibility="private" type="_ES3CUGgtEeqQA9LpF9Phjw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_dCsRMIUNEeqiaqWECzHBBQ" name="intX"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_eOOQMIUNEeqiaqWECzHBBQ" name="intY"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_fb7ZcIUNEeqiaqWECzHBBQ" name="intWidth"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_gjTRMIUNEeqiaqWECzHBBQ" name="intHeight"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaCoYGgtEeqQA9LpF9Phjw" name="Game">
             <language>JAVA</language>
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaIH8GgtEeqQA9LpF9Phjw" name="onUpdate" specification="_EaFEoGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaIH8GgtEeqQA9LpF9Phjw" name="onUpdate">
             <language>JAVA</language>
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaNAcGgtEeqQA9LpF9Phjw" name="swap" specification="_EaLLQGgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaNAcGgtEeqQA9LpF9Phjw" name="swap">
             <language>JAVA</language>
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaTHEGgtEeqQA9LpF9Phjw" name="fall" specification="_EaRR4GgtEeqQA9LpF9Phjw">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EaTHEGgtEeqQA9LpF9Phjw" name="fall">
             <language>JAVA</language>
             <body>&#xD;
 </body>
           </ownedBehavior>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_EZ6skGgtEeqQA9LpF9Phjw" name="Game" visibility="private" method="_EaCoYGgtEeqQA9LpF9Phjw"/>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_EaFEoGgtEeqQA9LpF9Phjw" name="onUpdate" visibility="private" method="_EaIH8GgtEeqQA9LpF9Phjw"/>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_EaLLQGgtEeqQA9LpF9Phjw" name="swap" visibility="private" method="_EaNAcGgtEeqQA9LpF9Phjw"/>
-          <ownedOperation xmi:type="uml:Operation" xmi:id="_EaRR4GgtEeqQA9LpF9Phjw" name="fall" visibility="private" method="_EaTHEGgtEeqQA9LpF9Phjw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_9Nu1UIUNEeqiaqWECzHBBQ" name="generateTrash"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="__Az8gIUNEeqiaqWECzHBBQ" name="generateNewRow"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_A9CYoIUOEeqiaqWECzHBBQ" name="changeBlockPosition"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_CtBvkIUOEeqiaqWECzHBBQ" name="advanceGrid"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_Eaab0GgtEeqQA9LpF9Phjw" name="GameClient" visibility="public">
           <ownedAttribute xmi:type="uml:Property" xmi:id="_EadfIGgtEeqQA9LpF9Phjw" name="listeners" visibility="private" type="_ESLs4GgtEeqQA9LpF9Phjw" isUnique="false">
@@ -1283,13 +1285,6 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_-8-l8WgwEeqQA9LpF9Phjw" name="registerdata" type="_EnywgGgtEeqQA9LpF9Phjw" association="_-89X0GgwEeqQA9LpF9Phjw"/>
       <ownedEnd xmi:type="uml:Property" xmi:id="_-8_NAGgwEeqQA9LpF9Phjw" name="registercontroller" type="_EWOfYGgtEeqQA9LpF9Phjw" association="_-89X0GgwEeqQA9LpF9Phjw"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_BXA_cGgxEeqQA9LpF9Phjw" memberEnd="_BXDbsWgxEeqQA9LpF9Phjw _BXFQ4GgxEeqQA9LpF9Phjw">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BXC0oGgxEeqQA9LpF9Phjw" source="org.eclipse.papyrus">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BXDbsGgxEeqQA9LpF9Phjw" key="nature" value="UML_Nature"/>
-      </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_BXDbsWgxEeqQA9LpF9Phjw" name="boarddata" type="_ES3CUGgtEeqQA9LpF9Phjw" association="_BXA_cGgxEeqQA9LpF9Phjw"/>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_BXFQ4GgxEeqQA9LpF9Phjw" name="game" type="_EZvGYGgtEeqQA9LpF9Phjw" association="_BXA_cGgxEeqQA9LpF9Phjw"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_CwQqUGgxEeqQA9LpF9Phjw" memberEnd="_CwRRYmgxEeqQA9LpF9Phjw _CwR4cGgxEeqQA9LpF9Phjw">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CwRRYGgxEeqQA9LpF9Phjw" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CwRRYWgxEeqQA9LpF9Phjw" key="nature" value="UML_Nature"/>
@@ -1444,13 +1439,11 @@
   <standard:Create xmi:id="_EQzM0GgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EQqp8GgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_ESl8kGgtEeqQA9LpF9Phjw" name="java.awt.event.ActionListener" base_Classifier="_ESLs4GgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_ETMZgGgtEeqQA9LpF9Phjw" name="java.awt.event.ActionEvent" base_Classifier="_ETFEwGgtEeqQA9LpF9Phjw"/>
-  <standard:Create xmi:id="_EUmHsGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EUey8GgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EU5CoGgtEeqQA9LpF9Phjw" name="JPanel" base_Classifier="_EUxG0GgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EVL9kGgtEeqQA9LpF9Phjw" name="JButton" base_Classifier="_EVCzoGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EVm0UGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EVgtsGgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EXC-wGgtEeqQA9LpF9Phjw" name="java.lang.String" base_Classifier="_EW8REGgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EXm_cGgtEeqQA9LpF9Phjw" name="ArrayList" base_Classifier="_EXgRwGgtEeqQA9LpF9Phjw"/>
-  <standard:Create xmi:id="_EZ_lEGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EZ6skGgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EayPQGgtEeqQA9LpF9Phjw" name="java.lang.Object" base_Classifier="_Eauk4GgtEeqQA9LpF9Phjw"/>
   <PapyrusJava:External xmi:id="_EbW3AGgtEeqQA9LpF9Phjw" name="java.lang.Throwable" base_Classifier="_EbRXcGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_Eb1YIGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EbwfoGgtEeqQA9LpF9Phjw"/>
