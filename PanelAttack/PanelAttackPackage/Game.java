@@ -17,6 +17,7 @@ public class Game
 		
 	public void gameStart() {
 		this.paused = false;
+		this.gameData = new GameData();
 	}
 	
 	public void tick() {

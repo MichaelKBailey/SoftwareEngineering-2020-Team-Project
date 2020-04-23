@@ -41,7 +41,7 @@ public class GamePlayAreaControl implements ActionListener {
 		/*As it stands, the client redraws its screen only when it receives an update from the server.
 		 * However, rather than handleMessageFromServer calling drawBoard (below) directly, it calls this.
 		 */
-		setGameData(gameData);
+		this.setGameData(gameData);
 		this.drawBoard();
 	}
 	
