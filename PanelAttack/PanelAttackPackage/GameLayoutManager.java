@@ -31,15 +31,24 @@ public class GameLayoutManager implements ItemListener {
 	private JPanel GamePlayAreaPanel;
 	private JPanel GameOverPanel;
 	private GameClient client;
-
+	private String address;
+	private int port;
+	
+	
+	public GameLayoutManager(String address, int port) {
+		this.address = address;
+		this.port = port;
+	}
+	
+	
 	public void addComponentToPane(Container pane) {
 		// Set up the chat client.
-		client = new GameClient();
+		client = new GameClient(address, port);
 
 		try {
 			client.openConnection();
 		} catch (IOException e) {
-			System.out.println("The client couldn't connect.");
+			System.out.println("The client couldn't connect on start.");
 		}
 
 		// Put the JComboBox in a JPanel to get a nicer look.
@@ -371,24 +380,27 @@ public class GameLayoutManager implements ItemListener {
 	}
 
 	
+	
+	
+	
 	public void itemStateChanged(ItemEvent evt) {
 		CardLayout cl = (CardLayout) (cards.getLayout());
 		cl.show(cards, (String) evt.getItem());
 	}
 	
 
-	/**
-	 * Create the GUI and show it. For thread safety, this method should be invoked
-	 * from the event dispatch thread.
-	 */
-	private static void createAndShowGUI() {
+	
+	
+	//Create the GUI and show it.
+	//For thread safety, this method should be invoked from the event dispatch thread.
+	private static void createAndShowGUI(String address, int port) {
 		// Create and set up the window.
 		JFrame frame = new JFrame("CardLayoutDemo");
 		frame.setSize(750, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Create and set up the content pane.
-		GameLayoutManager demo = new GameLayoutManager();
+		GameLayoutManager demo = new GameLayoutManager(address, port);
 		demo.addComponentToPane(frame.getContentPane());
 
 		// Display the window.
@@ -401,6 +413,11 @@ public class GameLayoutManager implements ItemListener {
 	
 
 	public static void main(String[] args) {
+		if (args.length != 2) {
+			System.out.println("Fail. Please give Address and Port# as command line arguments.");
+			return;
+		}
+		
 		/* Use an appropriate Look and Feel */
 		try {
 			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -421,7 +438,7 @@ public class GameLayoutManager implements ItemListener {
 		// creating and showing this application's GUI.
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				createAndShowGUI();
+				createAndShowGUI(args[0], Integer.parseInt(args[1]));
 			}
 		});
 	}

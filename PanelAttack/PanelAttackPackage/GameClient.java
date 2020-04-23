@@ -17,6 +17,10 @@ public class GameClient extends AbstractClient  {
 		super("localhost", 8300);
 	}
 	
+	public GameClient(String address, int port) {
+		super(address,port);
+	}
+	
 	public void setLoginControl(LoginControl lc) {
 		this.loginControl = lc;
 	}
