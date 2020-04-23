@@ -10,26 +10,29 @@ public class GameData
 	private int x;		//topleft x coordinate of the boundaries for blocks
 	private int y;		//topleft y coordinate of the boundaries for blocks
 	private int width;	//width of boundaries for blocks
-	private int height;	//height of boundaries for blocks
-	
-	public ArrayList<ArrayList<Block>> grid;
+	private int height;	//height of boundaries for blocks	
+	public ArrayList<ArrayList<Block>> playerOneGrid;
+	public ArrayList<ArrayList<Block>> playerTwoGrid;
 
 	public GameData(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		
+		this.playerOneGrid = new ArrayList<ArrayList<Block>>();
+		this.playerTwoGrid = new ArrayList<ArrayList<Block>>();
+		 
 		//Generate the 6 rows of starting blocks:
 		for (int i = 0; i < 6; i++) {
-			generateNewRow(0);
+			generateNewRow(playerOneGrid, 0);
+			generateNewRow(playerTwoGrid, 0);
 		}
 	}
 	
-	public void generateTrash(int width, int height, boolean right0left1) {
+	public void generateTrash(ArrayList<ArrayList<Block>> grid, int width, int height, boolean right0left1) {
 		//Trash blocks either fill the GameData (6blocks wide) or are against the left or right side (4blocks wide)
 		
-		generateNewRow(grid.size());	//if the GameData has 5 rows, indices 0-4, then size() returns 5 which will be the index of the next row on top
+		generateNewRow(grid, grid.size());	//if the GameData has 5 rows, indices 0-4, then size() returns 5 which will be the index of the next row on top
 		for (Block b : grid.get(grid.size()-1)) {	//set the trash flag on the new row
 			b.setTrash(true);
 			b.setColor(Color.gray);
@@ -46,7 +49,7 @@ public class GameData
 		}
 	}
 	
-	public void generateNewRow(int row_index) {
+	public void generateNewRow(ArrayList<ArrayList<Block>> grid, int row_index) {
 		//row_index is 0 for a new row at the bottom/below the bottom
 		ArrayList<Block> newrow = new ArrayList<Block>();
 		int new_y = 0;
@@ -85,13 +88,13 @@ public class GameData
 		}
 	}
 	
-	public boolean changeBlockPosition (int x1, int y1, int x2, int y2) {
+	public boolean changeBlockPosition (ArrayList<ArrayList<Block>> grid, int x1, int y1, int x2, int y2) {
 		//Returns false if block at either position is null;
 		//if (grid.get(y1))
 		return true;
 	}
 	
-	public boolean advanceGrid() {
+	public boolean advanceGrid(ArrayList<ArrayList<Block>> grid) {
 		/*It takes 15 ticks upward until a new row is playable,
 		 * therefore this method ticks a row (and the whole GameData) upward by 1/15th of a block's height,
 		 * by traversing every block and ticking their y values.
