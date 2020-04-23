@@ -10,6 +10,12 @@ public class GameClient extends AbstractClient  {
 	private GameLayoutManager gameLayout;
 	private LoginControl loginControl;
 	private RegisterControl registerControl;
+	private GamePlayAreaControl gamePlayAreaControl;
+	
+	
+	public GameClient() {
+		super("localhost", 8300);
+	}
 	
 	public void setLoginControl(LoginControl lc) {
 		this.loginControl = lc;
@@ -20,10 +26,11 @@ public class GameClient extends AbstractClient  {
 		this.registerControl = rc;
 	}
 
-	public GameClient() {
-		super("localhost", 8300);
+	public void setGamePlayAreaControl(GamePlayAreaControl pac) {
+		this.gamePlayAreaControl = pac;
 	}
 
+	
 	public void handleMessageFromServer(Object object) {
 
 		if (object instanceof String) {
@@ -47,8 +54,9 @@ public class GameClient extends AbstractClient  {
 			}
 		}
 
-		else if (object instanceof Board) {
-			System.out.println("Board Data Received");
+		else if (object instanceof GameData) {
+			gamePlayAreaControl.receiveUpdate((GameData)object);	//receiveUpdate calls its class's own setter
+			System.out.println("GameData Received");
 		}
 
 	}

@@ -13,7 +13,7 @@ public class GamePlayAreaControl implements ActionListener {
 	private JPanel cards;
 	private JPanel playerOnePanel;
 	private JPanel playerTwoPanel;
-
+	private GameData gameData;
 	
 	public GamePlayAreaControl() {
 		
@@ -31,7 +31,15 @@ public class GamePlayAreaControl implements ActionListener {
 		this.playerTwoPanel.setVisible(true);
 	}
 	
-	public void drawBoard(GameData gameData) {
+	public void receiveUpdate(GameData gameData) {
+		/*As it stands, the client redraws its screen only when it receives an update from the server.
+		 * However, rather than handleMessageFromServer calling drawBoard (below) directly, it calls this.
+		 */
+		setGameData(gameData);
+		this.drawBoard();
+	}
+	
+	public void drawBoard() {
 		//Remove old blocks:
 		this.playerOnePanel.removeAll();
 		this.playerTwoPanel.removeAll();
@@ -51,10 +59,18 @@ public class GamePlayAreaControl implements ActionListener {
 		}
 	}
 	
+	public void setGameData(GameData gameData) {
+		this.gameData = gameData;
+	}
+	
 	public void setPanels(JPanel playAreaPanel, JPanel playerOnePanel, JPanel playerTwoPanel) {
 		this.playAreaPanel = playAreaPanel;
 		this.playerOnePanel = playerOnePanel;
 		this.playerTwoPanel = playerTwoPanel;
+	}
+	
+	public GameData getGameData() {
+		return this.gameData;
 	}
 	
 	public void actionPerformed(ActionEvent ae) {
