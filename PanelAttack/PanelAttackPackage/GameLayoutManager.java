@@ -207,6 +207,16 @@ public class GameLayoutManager implements ItemListener {
 		MainMenuPanel.add(btnNewGame);
 
 		JButton btnFindMatch = new JButton("Find Match");
+		btnFindMatch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					client.sendToServer("ready");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				// What else would need to be done?
+			}
+		});
 		btnFindMatch.setBounds(81, 168, 98, 26);
 		MainMenuPanel.add(btnFindMatch);
 
