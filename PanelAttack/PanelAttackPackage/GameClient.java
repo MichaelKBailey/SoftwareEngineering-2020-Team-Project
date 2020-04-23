@@ -54,6 +54,11 @@ public class GameClient extends AbstractClient  {
 			case "The username is already in use.":
 				registerControl.registrationFailure();
 				break;
+			case "start":
+				
+				break;
+			default:
+				break;
 
 			}
 		}

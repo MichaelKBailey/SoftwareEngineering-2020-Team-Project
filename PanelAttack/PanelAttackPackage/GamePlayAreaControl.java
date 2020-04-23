@@ -15,6 +15,9 @@ public class GamePlayAreaControl implements ActionListener {
 	private JPanel playerTwoPanel;
 	private JPanel scoreBoardPanel;
 	private GameData gameData;
+	private UserData opponentUser;
+	private UserData selfUser;
+	
 	
 	public GamePlayAreaControl(GameClient client) {
 		this.client = client;
