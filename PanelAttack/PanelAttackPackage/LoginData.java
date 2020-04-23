@@ -28,4 +28,9 @@ public class LoginData implements Serializable {
 		setUsername(username);
 		setPassword(password);
 	}
+	
+	public LoginData() {
+		this.username = null;
+		this.password = null;
+	}
 }
