@@ -48,7 +48,7 @@ public class GamePlayAreaControl implements ActionListener {
 		this.playerTwoPanel.removeAll();
 		
 		//Draw new blocks:
-		for (ArrayList<Block>row : gameData.playerOneGrid) {	//Do this for Player 1
+		for (ArrayList<Block>row : gameData.board1.grid) {	//Do this for Player 1
 			for (Block block : row) {
 				if (block != null) {
 					block.setVisible(true);
@@ -56,7 +56,7 @@ public class GamePlayAreaControl implements ActionListener {
 				}	
 			}
 		}
-		for (ArrayList<Block>row : gameData.playerTwoGrid) {	//Do this for Player 2
+		for (ArrayList<Block>row : gameData.board2.grid) {	//Do this for Player 2
 			for (Block block : row) {
 				if (block != null) {
 					block.setVisible(true);
