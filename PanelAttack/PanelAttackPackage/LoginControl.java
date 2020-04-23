@@ -14,7 +14,8 @@ public class LoginControl implements ActionListener {
 	private JPanel panel;
 	private GameClient client;
 	private JPanel cards;
-
+	public boolean success = false;
+	
 	public LoginControl(JPanel panel, GameClient client) {
 		this.panel = panel;
 		this.client = client;

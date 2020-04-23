@@ -13,6 +13,7 @@ public class RegisterControl implements ActionListener{
 	private JPanel container;
 	private GameClient client;
 	private JPanel cards;
+	public boolean success = false;
 
 	//tired of fighting for references
 	private JTextField RegisterConfirmPasswordTextField;

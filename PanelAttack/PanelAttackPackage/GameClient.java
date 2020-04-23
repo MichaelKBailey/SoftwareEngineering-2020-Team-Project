@@ -12,7 +12,6 @@ public class GameClient extends AbstractClient  {
 	private LoginControl loginControl;
 	private RegisterControl registerControl;
 	
-	
 	public GameClient() {
 		super("localhost", 8300);
 	}
@@ -44,15 +43,19 @@ public class GameClient extends AbstractClient  {
 			switch(returnedString){
 			case "Login Successful.":
 				loginControl.loginSuccess();
+				loginControl.success = true;
 				break;
 			case "The username and password are incorrect.":
+				loginControl.success = false;
 				loginControl.loginFailure();
 				break;
 			case "Account Registration Successful.":
 				registerControl.registrationSuccess();
+				registerControl.success = true;
 				break;
 			case "The username is already in use.":
 				registerControl.registrationFailure();
+				registerControl.success = false;
 				break;
 			default:
 				break;
@@ -61,6 +64,7 @@ public class GameClient extends AbstractClient  {
 		}
 
 		else if (object instanceof GameData) {
+			gamePlayAreaControl.updateSuccess = true;
 			gamePlayAreaControl.receiveUpdate((GameData)object);	//receiveUpdate calls its class's own setter
 			System.out.println("GameData Received");
 			System.out.println("Game Data Received");

@@ -40,8 +40,6 @@ public class GameLayoutManager implements ItemListener {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream("address.properties");
 		prop.load(fis);
-		//address = "localhost";
-		//port = 8300;
 		address = prop.getProperty("address");  
 		port = Integer.parseInt(prop.getProperty("port"));
 	}

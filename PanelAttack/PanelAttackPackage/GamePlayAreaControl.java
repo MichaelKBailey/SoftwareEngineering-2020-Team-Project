@@ -17,7 +17,7 @@ public class GamePlayAreaControl implements ActionListener {
 	private GameData gameData;
 	private UserData opponentUser;
 	private UserData selfUser;
-	
+	public boolean updateSuccess = false;
 	
 	public GamePlayAreaControl(GameClient client) {
 		this.client = client;
