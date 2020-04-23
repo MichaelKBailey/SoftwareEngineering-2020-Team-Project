@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <uml:Model xmi:id="_ylB9MGMfEeqkG5MhUVHSFg" name="TeamDesignDocumentClassDesign">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_zAjbkGMfEeqkG5MhUVHSFg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -1206,30 +1206,20 @@
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_hyFCYIUWEeqW7vK7RAXlfg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hyVhEIUWEeqW7vK7RAXlfg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/documentation#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_DOCUMENTATION/Papyrus.profile.uml#_H9068AEYEeCIz8iAxBJnfA"/>
+    </profileApplication>
   </uml:Model>
   <standard:Create xmi:id="_EQKToGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EJjVUGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EQzM0GgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EQqp8GgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_ESl8kGgtEeqQA9LpF9Phjw" name="java.awt.event.ActionListener" base_Classifier="_ESLs4GgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_ETMZgGgtEeqQA9LpF9Phjw" name="java.awt.event.ActionEvent" base_Classifier="_ETFEwGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EU5CoGgtEeqQA9LpF9Phjw" name="JPanel" base_Classifier="_EUxG0GgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EVL9kGgtEeqQA9LpF9Phjw" name="JButton" base_Classifier="_EVCzoGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EVm0UGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EVgtsGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EXC-wGgtEeqQA9LpF9Phjw" name="java.lang.String" base_Classifier="_EW8REGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EXm_cGgtEeqQA9LpF9Phjw" name="ArrayList" base_Classifier="_EXgRwGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EayPQGgtEeqQA9LpF9Phjw" name="java.lang.Object" base_Classifier="_Eauk4GgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EbW3AGgtEeqQA9LpF9Phjw" name="java.lang.Throwable" base_Classifier="_EbRXcGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_Eb1YIGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EbwfoGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_Ece4YGgtEeqQA9LpF9Phjw" name="javax.swing.JPanel" base_Classifier="_EcbOAGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EeJFQGgtEeqQA9LpF9Phjw" name="ocsf.server.AbstractServer" base_Classifier="_EeEMwGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EefDgGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EeaLAGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EezMkGgtEeqQA9LpF9Phjw" name="ocsf.server.ConnectionToClient" base_Classifier="_Eese4GgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_Ekp88GgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EklrgGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_ElZj0GgtEeqQA9LpF9Phjw" name="JTextField" base_Classifier="_ElUrUGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EljU0GgtEeqQA9LpF9Phjw" name="JLabel" base_Classifier="_ElfqcGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_Elts4GgtEeqQA9LpF9Phjw" name="JPasswordField" base_Classifier="_ElpbcGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EmIjoGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EmESMGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EmZpYGgtEeqQA9LpF9Phjw" name="java.io.Serializable" base_Classifier="_EmVX8GgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_Eon28GgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EokzoGgtEeqQA9LpF9Phjw"/>
-  <PapyrusJava:External xmi:id="_EqHrwGgtEeqQA9LpF9Phjw" name="JCheckBox" base_Classifier="_EqCzQGgtEeqQA9LpF9Phjw"/>
   <standard:Create xmi:id="_EscnAGgtEeqQA9LpF9Phjw" base_BehavioralFeature="_EsY8oGgtEeqQA9LpF9Phjw"/>
 </xmi:XMI>
