@@ -29,6 +29,7 @@ public class GamePlayAreaControl implements ActionListener {
 	public void gameStart() {
 		this.playerOnePanel.setVisible(true);
 		this.playerTwoPanel.setVisible(true);
+		drawBoard();
 	}
 	
 	public void receiveUpdate(GameData gameData) {
@@ -47,14 +48,18 @@ public class GamePlayAreaControl implements ActionListener {
 		//Draw new blocks:
 		for (ArrayList<Block>row : gameData.playerOneGrid) {	//Do this for Player 1
 			for (Block block : row) {
-				block.setVisible(true);
-				this.playerOnePanel.add(block);
+				if (block != null) {
+					block.setVisible(true);
+					this.playerOnePanel.add(block);
+				}	
 			}
 		}
 		for (ArrayList<Block>row : gameData.playerTwoGrid) {	//Do this for Player 2
 			for (Block block : row) {
-				block.setVisible(true);
-				this.playerTwoPanel.add(block);
+				if (block != null) {
+					block.setVisible(true);
+					this.playerTwoPanel.add(block);
+				}
 			}
 		}
 	}
